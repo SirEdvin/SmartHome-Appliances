@@ -15,8 +15,8 @@ baseShaking {
 }
 
 vanillaShaking {
-    accessWideners.add("src/main/resources/template-common.accesswidener")
-    accessWideners.add("src/main/resources/template.accesswidener")
+    accessWideners.add("src/main/resources/smarthome_appliances-common.accesswidener")
+    accessWideners.add("src/main/resources/smarthome_appliances.accesswidener")
     shake()
 }
 

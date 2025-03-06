@@ -19,7 +19,7 @@ baseShaking {
 
 fabricShaking {
     commonProjectName.set("core")
-    accessWidener.set(project(":core").file("src/main/resources/template.accesswidener"))
+    accessWidener.set(project(":core").file("src/main/resources/smarthome_appliances.accesswidener"))
     extraVersionMappings.set(
         mapOf(
             "forgeconfigapiport" to "forgeconfigapirt",
