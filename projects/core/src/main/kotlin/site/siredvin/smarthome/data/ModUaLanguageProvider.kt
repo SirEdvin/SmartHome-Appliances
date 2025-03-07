@@ -1,6 +1,7 @@
 package site.siredvin.smarthome.data
 
 import net.minecraft.data.PackOutput
+import site.siredvin.smarthome.common.setup.Blocks
 import site.siredvin.smarthome.common.setup.Items
 import java.util.function.Consumer
 
@@ -18,6 +19,7 @@ class ModUaLanguageProvider(
 
     override fun addTranslations() {
         add(Items.TEMPLATE_ITEM.get(), "Шаблоний предмет", "Боже, у нього навіть нормальної текстури немає")
+        add(Blocks.LAMP.get(), "Лампа")
         add(ModText.CREATIVE_TAB, "А це треба перейменувати, друже")
         hooks.forEach { it.accept(this) }
     }

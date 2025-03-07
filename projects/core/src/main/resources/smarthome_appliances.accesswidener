@@ -1,1 +1,3 @@
 accessWidener v1 named
+
+accessible field net/minecraft/client/Minecraft itemColors Lnet/minecraft/client/color/item/ItemColors;

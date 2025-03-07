@@ -1,0 +1,6 @@
+{
+  "block.smarthome_appliances.lamp": "Лампа",
+  "item.smarthome_appliances.template_item": "Шаблоний предмет",
+  "item.smarthome_appliances.template_item.tooltip": "Боже, у нього навіть нормальної текстури немає",
+  "text.smarthome_appliances.creative_tab": "А це треба перейменувати, друже"
+}

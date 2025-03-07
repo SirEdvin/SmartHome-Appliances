@@ -1,0 +1,4 @@
+// 1.21.1	2025-03-08T00:11:05.028884124	SmartHome Appliances/Block State Definitions
+132b59472d17b0f8d493be7a1268d67efa150856 assets/smarthome_appliances/models/item/lamp.json
+6dacd2df47b12772352ff4b2ec958336f4c6072f assets/smarthome_appliances/blockstates/lamp.json
+f0557b7689d52037cd0e2d3b68813091fd109759 assets/smarthome_appliances/models/item/template_item.json
