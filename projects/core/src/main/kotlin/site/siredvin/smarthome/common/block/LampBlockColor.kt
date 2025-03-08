@@ -9,6 +9,8 @@ import site.siredvin.smarthome.common.blockentity.LampBlockEntity
 
 class LampBlockColor: BlockColor {
     override fun getColor(p0: BlockState, p1: BlockAndTintGetter?, p2: BlockPos?, p3: Int): Int {
+        if (p3 == 1)
+            return if (p0.getValue(LampBlock.CONNECTED)) DyeColor.GREEN.textColor else DyeColor.RED.textColor
         if (p1 != null && p2 != null)
             return (p1.getBlockEntity(p2) as? LampBlockEntity)?.color ?: 0
         return DyeColor.WHITE.textColor

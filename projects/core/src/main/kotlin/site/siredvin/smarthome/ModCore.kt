@@ -14,7 +14,7 @@ object ModCore {
 
     val LOGGER: Logger = LogManager.getLogger(MOD_ID)
 
-    fun configureCreativeTab(builder: CreativeModeTab.Builder): CreativeModeTab.Builder = builder.icon { Items.TEMPLATE_ITEM.get().defaultInstance }
+    fun configureCreativeTab(builder: CreativeModeTab.Builder): CreativeModeTab.Builder = builder.icon { Items.SMART_SCREWDRIVER.get().defaultInstance }
         .title(ModText.CREATIVE_TAB.text)
         .displayItems { _, output ->
             ModPlatform.holder.blocks.forEach { output.accept(it.get()) }

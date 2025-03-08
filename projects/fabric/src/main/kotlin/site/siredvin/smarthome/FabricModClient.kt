@@ -3,6 +3,7 @@ package site.siredvin.smarthome
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents
 import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers
 import net.minecraft.resources.ResourceLocation
 
 object FabricModClient : ClientModInitializer {
@@ -14,6 +15,9 @@ object FabricModClient : ClientModInitializer {
         ClientLifecycleEvents.CLIENT_STARTED.register {
             ModClientCore.registerBlockColors(it.blockColors)
             ModClientCore.registerItemColors(it.itemColors)
+        }
+        ModClientCore.EXTRA_BLOCK_ENTITY_RENDERERS.forEach {
+            BlockEntityRenderers.register(it.get(), ModClientCore.getBlockEntityRendererProvider(it.get()))
         }
     }
 }

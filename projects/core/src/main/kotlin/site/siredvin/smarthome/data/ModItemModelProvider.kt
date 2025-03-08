@@ -7,6 +7,6 @@ import site.siredvin.smarthome.common.setup.Items
 object ModItemModelProvider {
 
     fun addModels(generators: ItemModelGenerators) {
-        generators.generateFlatItem(Items.TEMPLATE_ITEM.get(), ModelTemplates.FLAT_ITEM)
+        generators.generateFlatItem(Items.SMART_SCREWDRIVER.get(), ModelTemplates.FLAT_ITEM)
     }
 }

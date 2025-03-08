@@ -4,6 +4,8 @@ import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
+import net.minecraft.sounds.SoundEvents
+import net.minecraft.sounds.SoundSource
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.ItemInteractionResult
 import net.minecraft.world.entity.player.Player
@@ -29,7 +31,6 @@ import site.siredvin.broccolium.modules.base.codec.BlockCodec
 import site.siredvin.broccolium.modules.base.codec.BlockCodec.blockEntityCodec
 import site.siredvin.smarthome.common.blockentity.LampBlockEntity
 import site.siredvin.smarthome.common.setup.BlockEntityTypes
-import java.awt.Color
 import java.util.stream.Stream
 
 class LampBlock: BaseNBTBlock<LampBlockEntity>(false, Properties.of().strength(1f, 5f).sound(SoundType.WOOD).noOcclusion().lightLevel { if (it.getValue(BlockStateProperties.ENABLED)) 15 else 0 }) {
@@ -38,6 +39,7 @@ class LampBlock: BaseNBTBlock<LampBlockEntity>(false, Properties.of().strength(1
         val FACING = BlockStateProperties.FACING
         val ENALBED = BlockStateProperties.ENABLED
         val FAKE = BooleanProperty.create("fake")
+        val CONNECTED = BooleanProperty.create("connected")
         val LAMP = Stream.of(
             Shapes.box(0.25, 0.0, 0.25, 0.75, 0.0625, 0.75),
             Shapes.box(0.3125, 0.0625, 0.3125, 0.6875, 0.4375, 0.6875)
@@ -71,7 +73,7 @@ class LampBlock: BaseNBTBlock<LampBlockEntity>(false, Properties.of().strength(1
 
     init {
         registerDefaultState(getStateDefinition().any().setValue(FACING, Direction.UP).setValue(ENALBED, false).setValue(
-            FAKE, false))
+            FAKE, false).setValue(CONNECTED, false))
     }
 
     override fun codec(): MapCodec<LampBlock> {
@@ -88,6 +90,7 @@ class LampBlock: BaseNBTBlock<LampBlockEntity>(false, Properties.of().strength(1
         builder.add(FACING)
         builder.add(ENALBED)
         builder.add(FAKE)
+        builder.add(CONNECTED)
     }
 
     override fun createItemStack(): ItemStack {
@@ -99,10 +102,6 @@ class LampBlock: BaseNBTBlock<LampBlockEntity>(false, Properties.of().strength(1
     override fun mirror(state: BlockState, mirror: Mirror): BlockState = state.rotate(mirror.getRotation(state.getValue(
         FACING
     )))
-
-    override fun skipRendering(`$$0`: BlockState, `$$1`: BlockState, `$$2`: Direction): Boolean {
-        return super.skipRendering(`$$0`, `$$1`, `$$2`)
-    }
 
     override fun newBlockEntity(p0: BlockPos, p1: BlockState): LampBlockEntity? {
         return BlockEntityTypes.LAMP.get().create(p0, p1)
@@ -138,7 +137,7 @@ class LampBlock: BaseNBTBlock<LampBlockEntity>(false, Properties.of().strength(1
         blockPos: BlockPos,
         player: Player,
         hand: InteractionHand,
-        blockHitResult: BlockHitResult
+        blockHitResult: BlockHitResult,
     ): ItemInteractionResult {
         val item = itemStack.item
         val blockEntity = level.getBlockEntity(blockPos) as? LampBlockEntity ?: return ItemInteractionResult.FAIL
@@ -151,7 +150,7 @@ class LampBlock: BaseNBTBlock<LampBlockEntity>(false, Properties.of().strength(1
             if (!player.isCreative) itemStack.shrink(1)
             return ItemInteractionResult.CONSUME
         }
-        blockEntity.pushInternalDataChangeToClient(blockState.setValue(BlockStateProperties.ENABLED, !blockState.getValue(BlockStateProperties.ENABLED)))
+        blockEntity.switch(player, level)
         return ItemInteractionResult.SUCCESS
     }
 }

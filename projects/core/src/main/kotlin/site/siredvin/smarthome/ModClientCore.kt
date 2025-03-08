@@ -5,12 +5,19 @@ import net.minecraft.client.Minecraft
 import net.minecraft.client.color.block.BlockColor
 import net.minecraft.client.color.block.BlockColors
 import net.minecraft.client.color.item.ItemColors
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.level.block.entity.BlockEntity
+import net.minecraft.world.level.block.entity.BlockEntityType
+import site.siredvin.smarthome.client.renderer.SwitchBlockEntityRenderer
 import site.siredvin.smarthome.common.block.LampBlockColor
+import site.siredvin.smarthome.common.blockentity.SwitchBlockEntity
 import site.siredvin.smarthome.common.item.LampItemColor
+import site.siredvin.smarthome.common.setup.BlockEntityTypes
 import site.siredvin.smarthome.common.setup.Blocks
 import site.siredvin.smarthome.common.setup.Items
 import java.util.function.Consumer
+import java.util.function.Supplier
 
 object ModClientCore {
     val EXTRA_MODELS = emptyArray<String>()
@@ -25,6 +32,19 @@ object ModClientCore {
 
     fun registerItemColors(itemColors: ItemColors) {
         itemColors.register(LampItemColor(), Blocks.LAMP.get().asItem())
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    val EXTRA_BLOCK_ENTITY_RENDERERS: Array<Supplier<BlockEntityType<BlockEntity>>> = arrayOf(
+        BlockEntityTypes.SWITCH as Supplier<BlockEntityType<BlockEntity>>,
+    )
+
+    @Suppress("UNCHECKED_CAST")
+    fun getBlockEntityRendererProvider(type: BlockEntityType<BlockEntity>): BlockEntityRendererProvider<BlockEntity> {
+        if (type == BlockEntityTypes.SWITCH.get()) {
+            return BlockEntityRendererProvider { SwitchBlockEntityRenderer() } as BlockEntityRendererProvider<BlockEntity>
+        }
+        throw IllegalArgumentException("There is no extra renderer for $type")
     }
 
     fun onInit() {

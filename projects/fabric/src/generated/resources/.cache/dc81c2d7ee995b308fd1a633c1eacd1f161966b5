@@ -1,4 +1,6 @@
-// 1.21.1	2025-03-08T00:11:05.028884124	SmartHome Appliances/Block State Definitions
+// 1.21.1	2025-03-08T13:57:20.196543757	SmartHome Appliances/Block State Definitions
 132b59472d17b0f8d493be7a1268d67efa150856 assets/smarthome_appliances/models/item/lamp.json
+3c997e10bdd3bafd19cafc36d5c5ab7e9b21d4a1 assets/smarthome_appliances/models/item/switch.json
 6dacd2df47b12772352ff4b2ec958336f4c6072f assets/smarthome_appliances/blockstates/lamp.json
-f0557b7689d52037cd0e2d3b68813091fd109759 assets/smarthome_appliances/models/item/template_item.json
+b17fbd513315e264a216de61b8c670b0fb7b96b4 assets/smarthome_appliances/blockstates/switch.json
+6342e817d44289f1077e82320d4fe49005a10e3a assets/smarthome_appliances/models/item/smart_screwdriver.json

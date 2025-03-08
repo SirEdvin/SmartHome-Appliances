@@ -54,7 +54,23 @@ object ModBlockModelProvider {
     }
 
 
-    fun lampBlock(generators: BlockModelGenerators, block: Block, onModel: ResourceLocation, offModel: ResourceLocation) {
+    fun lampBlock(generators: BlockModelGenerators) {
+        val block = Blocks.LAMP.get()
+        val onModel =  ModelLocationUtils.getModelLocation(block, "_on")
+        val offModel =  ModelLocationUtils.getModelLocation(block, "_off")
+        generators.blockStateOutput.accept(
+            MultiVariantGenerator.multiVariant(
+                block,
+                Variant.variant().with(VariantProperties.MODEL, onModel),
+            ).with(createFacingDispatch()).with(createBooleanDispatching(offModel, onModel, LampBlock.ENALBED)),
+        )
+        generators.delegateItemModel(block, ModelLocationUtils.getModelLocation(block))
+    }
+
+    fun switchBlock(generators: BlockModelGenerators) {
+        val block = Blocks.SWITCH.get()
+        val onModel =  ModelLocationUtils.getModelLocation(block, "_on")
+        val offModel =  ModelLocationUtils.getModelLocation(block, "_off")
         generators.blockStateOutput.accept(
             MultiVariantGenerator.multiVariant(
                 block,
@@ -65,8 +81,7 @@ object ModBlockModelProvider {
     }
 
     fun addModels(@Suppress("UNUSED_PARAMETER") generators: BlockModelGenerators) {
-        val lamp_on_model =  ModelLocationUtils.getModelLocation(Blocks.LAMP.get(), "_on")
-        val lamp_off_model =  ModelLocationUtils.getModelLocation(Blocks.LAMP.get(), "_off")
-        lampBlock(generators, Blocks.LAMP.get(), lamp_on_model, lamp_off_model)
+        lampBlock(generators)
+        switchBlock(generators)
     }
 }

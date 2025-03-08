@@ -18,9 +18,11 @@ class ModEnLanguageProvider(
     }
 
     override fun addTranslations() {
-        add(Items.TEMPLATE_ITEM.get(), "Template item", "Oh my god, where the texture go?")
+        add(Items.SMART_SCREWDRIVER.get(), "Smart screwdriver", "§6Sometimes you can hear it makes a pretty pitch sound")
         add(Blocks.LAMP.get(), "Lamp")
+        add(Blocks.SWITCH.get(), "Switch")
         add(ModText.CREATIVE_TAB, "Rename this, pal")
+        add(ModText.SCREWDRIVER_TARGET_BLOCK, "Target block %s")
         hooks.forEach { it.accept(this) }
     }
 }

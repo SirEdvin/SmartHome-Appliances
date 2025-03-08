@@ -22,6 +22,7 @@ object ModLootTableProvider {
     fun registerBlocks(@Suppress("UNUSED_PARAMETER") consumer: BiConsumer<ResourceKey<LootTable>, LootTable.Builder>) {
         val lootTable = LootTableHelper(ModPlatform.holder)
         lootTable.computedDrop(Blocks.LAMP)
+        lootTable.computedDrop(Blocks.SWITCH)
         lootTable.validate()
     }
 }
