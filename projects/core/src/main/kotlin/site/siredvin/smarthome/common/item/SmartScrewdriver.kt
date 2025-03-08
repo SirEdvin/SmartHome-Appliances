@@ -64,7 +64,7 @@ class SmartScrewdriver: DescriptiveItem(Properties().stacksTo(1)) {
             val attachedBlockEntity = context.level.getBlockEntity(NbtUtils.readBlockPos(data, TARGET_BLOCK_TAG).get())
             if (attachedBlockEntity !is SwitchBlockEntity)
                 return InteractionResult.PASS
-            val result = attachedBlockEntity.connect(blockEntity.blockPos, context.level)
+            val result = attachedBlockEntity.toggle(blockEntity.blockPos, context.level)
             return if (result) InteractionResult.CONSUME else InteractionResult.SUCCESS
         }
         return super.useOn(context)

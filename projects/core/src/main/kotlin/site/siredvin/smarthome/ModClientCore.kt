@@ -36,7 +36,7 @@ object ModClientCore {
 
     @Suppress("UNCHECKED_CAST")
     val EXTRA_BLOCK_ENTITY_RENDERERS: Array<Supplier<BlockEntityType<BlockEntity>>> = arrayOf(
-        BlockEntityTypes.SWITCH as Supplier<BlockEntityType<BlockEntity>>,
+//        BlockEntityTypes.SWITCH as Supplier<BlockEntityType<BlockEntity>>,
     )
 
     @Suppress("UNCHECKED_CAST")

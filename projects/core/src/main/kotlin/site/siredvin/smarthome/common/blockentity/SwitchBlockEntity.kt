@@ -21,7 +21,10 @@ class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTB
         const val CONNECTED_BLOCKS_TAG = "connectedBlocks"
     }
 
-    private val connectedBlocks: MutableSet<BlockPos> = mutableSetOf()
+    private val internalConnectedBlocks: MutableSet<BlockPos> = mutableSetOf()
+
+    val connectedBlocks: Set<BlockPos>
+        get() = internalConnectedBlocks
 
     override fun loadInternalData(data: CompoundTag, state: BlockState?): BlockState {
         if (data.contains(CONNECTED_BLOCKS_TAG)) {
@@ -29,7 +32,7 @@ class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTB
             blocks.forEach {
                 if (it is IntArrayTag) {
                     if (it.size == 3)
-                        connectedBlocks.add(BlockPos(
+                        internalConnectedBlocks.add(BlockPos(
                             it[0].asInt,
                             it[1].asInt,
                             it[2].asInt
@@ -43,17 +46,40 @@ class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTB
     fun connect(target: BlockPos, level: Level): Boolean {
         val blockEntity = level.getBlockEntity(target)
         if (blockEntity is LampBlockEntity) {
-            val result = connectedBlocks.add(target)
-            pushInternalDataChangeToClient()
+            val result = internalConnectedBlocks.add(target)
+            if (result) {
+                pushInternalDataChangeToClient()
+                blockEntity.controlledBlock = blockPos
+            }
             return result
         }
         return false
     }
 
+    fun disconnect(target: BlockPos, level: Level): Boolean {
+        val blockEntity = level.getBlockEntity(target)
+        if (blockEntity is LampBlockEntity) {
+            val result = internalConnectedBlocks.remove(target)
+            if (result) {
+                pushInternalDataChangeToClient()
+                blockEntity.controlledBlock = null
+            }
+            return result
+        }
+        return false
+    }
+
+    fun toggle(target: BlockPos, level: Level): Boolean {
+        if (internalConnectedBlocks.contains(target)) {
+            return disconnect(target, level)
+        }
+        return connect(target, level)
+    }
+
     override fun saveInternalData(data: CompoundTag): CompoundTag {
-        if (connectedBlocks.isNotEmpty()) {
+        if (internalConnectedBlocks.isNotEmpty()) {
             val list = ListTag()
-            connectedBlocks.forEach {
+            internalConnectedBlocks.forEach {
                 list.add(NbtUtils.writeBlockPos(it))
             }
             data.put(CONNECTED_BLOCKS_TAG, list)
@@ -66,7 +92,7 @@ class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTB
             BlockStateProperties.ENABLED)
         pushInternalDataChangeToClient(blockState.setValue(
             BlockStateProperties.ENABLED, targetValue))
-        connectedBlocks.forEach {
+        internalConnectedBlocks.forEach {
             val targetBlockEntity = level.getBlockEntity(it)
             if (targetBlockEntity is LampBlockEntity) {
                 targetBlockEntity.set(targetValue)
