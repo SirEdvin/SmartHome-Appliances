@@ -1,0 +1,8 @@
+{
+  "parent": "smarthome_appliances:block/led_panel_two_side_side",
+  "textures": {
+    "0": "smarthome_appliances:block/smooth_stone",
+    "1": "smarthome_appliances:block/led_panel_off",
+    "particle": "smarthome_appliances:block/smooth_stone"
+  }
+}
