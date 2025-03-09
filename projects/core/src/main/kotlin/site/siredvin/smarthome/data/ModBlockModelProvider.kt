@@ -8,9 +8,10 @@ import net.minecraft.data.models.blockstates.Variant
 import net.minecraft.data.models.blockstates.VariantProperties
 import net.minecraft.data.models.model.ModelLocationUtils
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.properties.BooleanProperty
 import site.siredvin.smarthome.common.block.LampBlock
+import site.siredvin.smarthome.common.block.LedPanelBlock
+import site.siredvin.smarthome.common.block.SwitchBlock
 import site.siredvin.smarthome.common.setup.Blocks
 
 object ModBlockModelProvider {
@@ -75,7 +76,34 @@ object ModBlockModelProvider {
             MultiVariantGenerator.multiVariant(
                 block,
                 Variant.variant().with(VariantProperties.MODEL, onModel),
-            ).with(createFacingDispatch()).with(createBooleanDispatching(offModel, onModel, LampBlock.ENALBED)),
+            ).with(createFacingDispatch()).with(createBooleanDispatching(offModel, onModel, SwitchBlock.ENALBED)),
+        )
+        generators.delegateItemModel(block, ModelLocationUtils.getModelLocation(block))
+    }
+
+    fun panelBlock(generators: BlockModelGenerators) {
+        val block = Blocks.LED_PANEL.get()
+        val onModel =  ModelLocationUtils.getModelLocation(block, "_on")
+        val offModel =  ModelLocationUtils.getModelLocation(block, "_off")
+        val onModelTwoSide =  ModelLocationUtils.getModelLocation(block, "_two_side_on")
+        val offModelTwoSide =  ModelLocationUtils.getModelLocation(block, "_two_side_off")
+
+        val dispatch = PropertyDispatch.properties(LedPanelBlock.AMOUNT, LedPanelBlock.SECOND_FACING, LedPanelBlock.ENALBED)
+        // Single panel
+        Direction.entries.forEach {
+            dispatch.select(1, it, false, Variant.variant().with(VariantProperties.MODEL, offModel))
+            dispatch.select(1, it, true, Variant.variant().with(VariantProperties.MODEL, onModel))
+        }
+        // Two panels
+        Direction.entries.forEach {
+            dispatch.select(2, it, false, Variant.variant().with(VariantProperties.MODEL, offModelTwoSide))
+            dispatch.select(2, it, true, Variant.variant().with(VariantProperties.MODEL, onModelTwoSide))
+        }
+        generators.blockStateOutput.accept(
+            MultiVariantGenerator.multiVariant(
+                block,
+                Variant.variant().with(VariantProperties.MODEL, onModel),
+            ).with(createFacingDispatch()).with(dispatch),
         )
         generators.delegateItemModel(block, ModelLocationUtils.getModelLocation(block))
     }
@@ -83,5 +111,6 @@ object ModBlockModelProvider {
     fun addModels(@Suppress("UNUSED_PARAMETER") generators: BlockModelGenerators) {
         lampBlock(generators)
         switchBlock(generators)
+        panelBlock(generators)
     }
 }

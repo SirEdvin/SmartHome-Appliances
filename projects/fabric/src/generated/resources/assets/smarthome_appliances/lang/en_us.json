@@ -1,5 +1,6 @@
 {
   "block.smarthome_appliances.lamp": "Lamp",
+  "block.smarthome_appliances.led_panel": "Led panel",
   "block.smarthome_appliances.switch": "Switch",
   "item.smarthome_appliances.smart_screwdriver": "Smart screwdriver",
   "item.smarthome_appliances.smart_screwdriver.tooltip": "§6Sometimes you can hear it makes a pretty pitch sound",

@@ -21,6 +21,7 @@ class ModEnLanguageProvider(
         add(Items.SMART_SCREWDRIVER.get(), "Smart screwdriver", "§6Sometimes you can hear it makes a pretty pitch sound")
         add(Blocks.LAMP.get(), "Lamp")
         add(Blocks.SWITCH.get(), "Switch")
+        add(Blocks.LED_PANEL.get(), "Led panel")
         add(ModText.CREATIVE_TAB, "Rename this, pal")
         add(ModText.SCREWDRIVER_TARGET_BLOCK, "Target block %s")
         hooks.forEach { it.accept(this) }

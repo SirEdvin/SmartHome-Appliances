@@ -21,6 +21,7 @@ class ModUaLanguageProvider(
         add(Items.SMART_SCREWDRIVER.get(), "Розумна викрутна", "§6Іноді вона видає доволі високий звук")
         add(Blocks.LAMP.get(), "Лампа")
         add(Blocks.SWITCH.get(), "Перемикач")
+        add(Blocks.LED_PANEL.get(), "Led-панель")
         add(ModText.CREATIVE_TAB, "А це треба перейменувати, друже")
         add(ModText.SCREWDRIVER_TARGET_BLOCK, "Цільовий блок %s")
         hooks.forEach { it.accept(this) }
