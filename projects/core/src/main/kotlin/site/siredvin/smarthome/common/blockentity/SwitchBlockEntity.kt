@@ -13,7 +13,9 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import site.siredvin.broccolium.modules.base.blockentity.MutableNBTBlockEntity
+import site.siredvin.smarthome.common.block.ColoredLightBlock
 import site.siredvin.smarthome.common.setup.BlockEntityTypes
+import site.siredvin.smarthome.tags.ModBlockTags
 
 class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTBlockEntity(BlockEntityTypes.SWITCH.get(), blockPos, blockState) {
 
@@ -44,12 +46,12 @@ class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTB
     }
 
     fun connect(target: BlockPos, level: Level): Boolean {
-        val blockEntity = level.getBlockEntity(target)
-        if (blockEntity is LampBlockEntity) {
+        val blockState = level.getBlockState(target)
+        if (blockState.`is`(ModBlockTags.LIGHT_BLOCK) && !blockState.getValue(ColoredLightBlock.CONNECTED)) {
             val result = internalConnectedBlocks.add(target)
             if (result) {
                 pushInternalDataChangeToClient()
-                blockEntity.controlledBlock = blockPos
+                level.setBlockAndUpdate(target, blockState.setValue(ColoredLightBlock.CONNECTED, true))
             }
             return result
         }
@@ -57,16 +59,21 @@ class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTB
     }
 
     fun disconnect(target: BlockPos, level: Level): Boolean {
-        val blockEntity = level.getBlockEntity(target)
-        if (blockEntity is LampBlockEntity) {
-            val result = internalConnectedBlocks.remove(target)
-            if (result) {
-                pushInternalDataChangeToClient()
-                blockEntity.controlledBlock = null
-            }
-            return result
+        val blockState = level.getBlockState(target)
+        if (blockState.`is`(ModBlockTags.LIGHT_BLOCK) && blockState.getValue(ColoredLightBlock.CONNECTED) && internalConnectedBlocks.contains(target)) {
+            internalConnectedBlocks.remove(target)
+            pushInternalDataChangeToClient()
+            level.setBlockAndUpdate(target, blockState.setValue(ColoredLightBlock.CONNECTED, false))
+            return true
         }
         return false
+    }
+
+    fun disconnectAll(level: Level) {
+        internalConnectedBlocks.forEach {
+            level.setBlockAndUpdate(it, level.getBlockState(it).setValue(ColoredLightBlock.CONNECTED, false))
+        }
+        internalConnectedBlocks.clear()
     }
 
     fun toggle(target: BlockPos, level: Level): Boolean {
@@ -93,9 +100,10 @@ class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTB
         pushInternalDataChangeToClient(blockState.setValue(
             BlockStateProperties.ENABLED, targetValue))
         internalConnectedBlocks.forEach {
-            val targetBlockEntity = level.getBlockEntity(it)
-            if (targetBlockEntity is LampBlockEntity) {
-                targetBlockEntity.set(targetValue)
+            val targetState = level.getBlockState(it)
+            if (targetState.`is`(ModBlockTags.LIGHT_BLOCK)) {
+                level.setBlockAndUpdate(it, targetState.setValue(
+                    ColoredLightBlock.ENALBED, targetValue))
             }
         }
         if (player != null) {

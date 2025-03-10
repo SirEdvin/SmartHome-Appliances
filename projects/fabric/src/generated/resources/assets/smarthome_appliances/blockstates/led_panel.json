@@ -1,644 +1,256 @@
 {
   "variants": {
-    "amount=1,enabled=false,facing=down,second_facing=down": {
+    "enabled=false,form=down": {
       "model": "smarthome_appliances:block/led_panel_off",
       "x": 180,
       "y": 0
     },
-    "amount=1,enabled=false,facing=down,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 180,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=down,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 180,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=down,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 180,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=down,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 180,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=down,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 180,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=east,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 90
-    },
-    "amount=1,enabled=false,facing=east,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 90
-    },
-    "amount=1,enabled=false,facing=east,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 90
-    },
-    "amount=1,enabled=false,facing=east,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 90
-    },
-    "amount=1,enabled=false,facing=east,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 90
-    },
-    "amount=1,enabled=false,facing=east,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 90
-    },
-    "amount=1,enabled=false,facing=north,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=north,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=north,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=north,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=north,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=north,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=south,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 180
-    },
-    "amount=1,enabled=false,facing=south,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 180
-    },
-    "amount=1,enabled=false,facing=south,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 180
-    },
-    "amount=1,enabled=false,facing=south,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 180
-    },
-    "amount=1,enabled=false,facing=south,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 180
-    },
-    "amount=1,enabled=false,facing=south,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 180
-    },
-    "amount=1,enabled=false,facing=up,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 0,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=up,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 0,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=up,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 0,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=up,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 0,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=up,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 0,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=up,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 0,
-      "y": 0
-    },
-    "amount=1,enabled=false,facing=west,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 270
-    },
-    "amount=1,enabled=false,facing=west,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 270
-    },
-    "amount=1,enabled=false,facing=west,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 270
-    },
-    "amount=1,enabled=false,facing=west,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 270
-    },
-    "amount=1,enabled=false,facing=west,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 270
-    },
-    "amount=1,enabled=false,facing=west,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_off",
-      "x": 90,
-      "y": 270
-    },
-    "amount=1,enabled=true,facing=down,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 180,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=down,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 180,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=down,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 180,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=down,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 180,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=down,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 180,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=down,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 180,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=east,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 90
-    },
-    "amount=1,enabled=true,facing=east,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 90
-    },
-    "amount=1,enabled=true,facing=east,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 90
-    },
-    "amount=1,enabled=true,facing=east,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 90
-    },
-    "amount=1,enabled=true,facing=east,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 90
-    },
-    "amount=1,enabled=true,facing=east,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 90
-    },
-    "amount=1,enabled=true,facing=north,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=north,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=north,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=north,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=north,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=north,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=south,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 180
-    },
-    "amount=1,enabled=true,facing=south,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 180
-    },
-    "amount=1,enabled=true,facing=south,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 180
-    },
-    "amount=1,enabled=true,facing=south,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 180
-    },
-    "amount=1,enabled=true,facing=south,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 180
-    },
-    "amount=1,enabled=true,facing=south,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 180
-    },
-    "amount=1,enabled=true,facing=up,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 0,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=up,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 0,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=up,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 0,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=up,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 0,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=up,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 0,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=up,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 0,
-      "y": 0
-    },
-    "amount=1,enabled=true,facing=west,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 270
-    },
-    "amount=1,enabled=true,facing=west,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 270
-    },
-    "amount=1,enabled=true,facing=west,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 270
-    },
-    "amount=1,enabled=true,facing=west,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 270
-    },
-    "amount=1,enabled=true,facing=west,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 270
-    },
-    "amount=1,enabled=true,facing=west,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_on",
-      "x": 90,
-      "y": 270
-    },
-    "amount=2,enabled=false,facing=down,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=false,facing=down,second_facing=east": {
+    "enabled=false,form=down_east": {
       "model": "smarthome_appliances:block/led_panel_two_side_off",
       "x": 180,
       "y": 90
     },
-    "amount=2,enabled=false,facing=down,second_facing=north": {
+    "enabled=false,form=down_north": {
       "model": "smarthome_appliances:block/led_panel_two_side_off",
       "x": 180,
       "y": 0
     },
-    "amount=2,enabled=false,facing=down,second_facing=south": {
+    "enabled=false,form=down_north_east": {
+      "model": "smarthome_appliances:block/led_panel_three_side_off",
+      "x": 180,
+      "y": 0
+    },
+    "enabled=false,form=down_north_west": {
+      "model": "smarthome_appliances:block/led_panel_three_side_off",
+      "x": 180,
+      "y": 270
+    },
+    "enabled=false,form=down_south": {
       "model": "smarthome_appliances:block/led_panel_two_side_off",
       "x": 180,
       "y": 180
     },
-    "amount=2,enabled=false,facing=down,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_broken"
+    "enabled=false,form=down_south_east": {
+      "model": "smarthome_appliances:block/led_panel_three_side_off",
+      "x": 180,
+      "y": 90
     },
-    "amount=2,enabled=false,facing=down,second_facing=west": {
+    "enabled=false,form=down_south_west": {
+      "model": "smarthome_appliances:block/led_panel_three_side_off",
+      "x": 180,
+      "y": 180
+    },
+    "enabled=false,form=down_west": {
       "model": "smarthome_appliances:block/led_panel_two_side_off",
       "x": 180,
       "y": 270
     },
-    "amount=2,enabled=false,facing=east,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_two_side_off",
-      "x": 180,
+    "enabled=false,form=east": {
+      "model": "smarthome_appliances:block/led_panel_off",
+      "x": 90,
       "y": 90
     },
-    "amount=2,enabled=false,facing=east,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_broken"
+    "enabled=false,form=north": {
+      "model": "smarthome_appliances:block/led_panel_off",
+      "x": 90,
+      "y": 0
     },
-    "amount=2,enabled=false,facing=east,second_facing=north": {
+    "enabled=false,form=north_east": {
       "model": "smarthome_appliances:block/led_panel_two_side_side_off",
-      "x": 180
-    },
-    "amount=2,enabled=false,facing=east,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_two_side_side_off",
-      "x": 0
-    },
-    "amount=2,enabled=false,facing=east,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_two_side_off",
-      "y": 270
-    },
-    "amount=2,enabled=false,facing=east,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=false,facing=north,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_two_side_off",
       "x": 180,
       "y": 0
     },
-    "amount=2,enabled=false,facing=north,second_facing=east": {
+    "enabled=false,form=north_west": {
       "model": "smarthome_appliances:block/led_panel_two_side_side_off",
-      "x": 180
-    },
-    "amount=2,enabled=false,facing=north,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=false,facing=north,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=false,facing=north,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_two_side_off",
-      "y": 180
-    },
-    "amount=2,enabled=false,facing=north,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_two_side_side_off",
-      "x": 90
-    },
-    "amount=2,enabled=false,facing=south,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_two_side_off",
       "x": 180,
+      "y": 270
+    },
+    "enabled=false,form=south": {
+      "model": "smarthome_appliances:block/led_panel_off",
+      "x": 90,
       "y": 180
     },
-    "amount=2,enabled=false,facing=south,second_facing=east": {
+    "enabled=false,form=south_east": {
       "model": "smarthome_appliances:block/led_panel_two_side_side_off",
-      "x": 0
-    },
-    "amount=2,enabled=false,facing=south,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=false,facing=south,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=false,facing=south,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_two_side_off",
+      "x": 0,
       "y": 0
     },
-    "amount=2,enabled=false,facing=south,second_facing=west": {
+    "enabled=false,form=south_west": {
       "model": "smarthome_appliances:block/led_panel_two_side_side_off",
-      "x": 0
+      "x": 0,
+      "y": 90
     },
-    "amount=2,enabled=false,facing=up,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_broken"
+    "enabled=false,form=up": {
+      "model": "smarthome_appliances:block/led_panel_off",
+      "x": 0,
+      "y": 0
     },
-    "amount=2,enabled=false,facing=up,second_facing=east": {
+    "enabled=false,form=up_east": {
       "model": "smarthome_appliances:block/led_panel_two_side_off",
       "y": 270
     },
-    "amount=2,enabled=false,facing=up,second_facing=north": {
+    "enabled=false,form=up_north": {
       "model": "smarthome_appliances:block/led_panel_two_side_off",
       "y": 180
     },
-    "amount=2,enabled=false,facing=up,second_facing=south": {
+    "enabled=false,form=up_north_east": {
+      "model": "smarthome_appliances:block/led_panel_three_side_off",
+      "x": 0,
+      "y": 270
+    },
+    "enabled=false,form=up_north_west": {
+      "model": "smarthome_appliances:block/led_panel_three_side_off",
+      "x": 0,
+      "y": 180
+    },
+    "enabled=false,form=up_south": {
       "model": "smarthome_appliances:block/led_panel_two_side_off",
       "y": 0
     },
-    "amount=2,enabled=false,facing=up,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_broken"
+    "enabled=false,form=up_south_east": {
+      "model": "smarthome_appliances:block/led_panel_three_side_off",
+      "x": 0,
+      "y": 0
     },
-    "amount=2,enabled=false,facing=up,second_facing=west": {
+    "enabled=false,form=up_south_west": {
+      "model": "smarthome_appliances:block/led_panel_three_side_off",
+      "x": 0,
+      "y": 90
+    },
+    "enabled=false,form=up_west": {
       "model": "smarthome_appliances:block/led_panel_two_side_off",
       "y": 90
     },
-    "amount=2,enabled=false,facing=west,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_two_side_off",
-      "x": 180,
+    "enabled=false,form=west": {
+      "model": "smarthome_appliances:block/led_panel_off",
+      "x": 90,
       "y": 270
     },
-    "amount=2,enabled=false,facing=west,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_broken"
+    "enabled=true,form=down": {
+      "model": "smarthome_appliances:block/led_panel_on",
+      "x": 180,
+      "y": 0
     },
-    "amount=2,enabled=false,facing=west,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_two_side_side_off",
-      "x": 90
-    },
-    "amount=2,enabled=false,facing=west,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_two_side_side_off",
-      "x": 0
-    },
-    "amount=2,enabled=false,facing=west,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_two_side_off",
-      "y": 90
-    },
-    "amount=2,enabled=false,facing=west,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=true,facing=down,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=true,facing=down,second_facing=east": {
+    "enabled=true,form=down_east": {
       "model": "smarthome_appliances:block/led_panel_two_side_on",
       "x": 180,
       "y": 90
     },
-    "amount=2,enabled=true,facing=down,second_facing=north": {
+    "enabled=true,form=down_north": {
       "model": "smarthome_appliances:block/led_panel_two_side_on",
       "x": 180,
       "y": 0
     },
-    "amount=2,enabled=true,facing=down,second_facing=south": {
+    "enabled=true,form=down_north_east": {
+      "model": "smarthome_appliances:block/led_panel_three_side_on",
+      "x": 180,
+      "y": 0
+    },
+    "enabled=true,form=down_north_west": {
+      "model": "smarthome_appliances:block/led_panel_three_side_on",
+      "x": 180,
+      "y": 270
+    },
+    "enabled=true,form=down_south": {
       "model": "smarthome_appliances:block/led_panel_two_side_on",
       "x": 180,
       "y": 180
     },
-    "amount=2,enabled=true,facing=down,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=true,facing=down,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_two_side_on",
-      "x": 180,
-      "y": 270
-    },
-    "amount=2,enabled=true,facing=east,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_two_side_on",
+    "enabled=true,form=down_south_east": {
+      "model": "smarthome_appliances:block/led_panel_three_side_on",
       "x": 180,
       "y": 90
     },
-    "amount=2,enabled=true,facing=east,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=true,facing=east,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_two_side_side_on",
-      "x": 180
-    },
-    "amount=2,enabled=true,facing=east,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_two_side_side_on",
-      "x": 0
-    },
-    "amount=2,enabled=true,facing=east,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_two_side_on",
-      "y": 270
-    },
-    "amount=2,enabled=true,facing=east,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=true,facing=north,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_two_side_on",
-      "x": 180,
-      "y": 0
-    },
-    "amount=2,enabled=true,facing=north,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_two_side_side_on",
-      "x": 180
-    },
-    "amount=2,enabled=true,facing=north,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=true,facing=north,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=true,facing=north,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_two_side_on",
-      "y": 180
-    },
-    "amount=2,enabled=true,facing=north,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_two_side_side_on",
-      "x": 90
-    },
-    "amount=2,enabled=true,facing=south,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_two_side_on",
+    "enabled=true,form=down_south_west": {
+      "model": "smarthome_appliances:block/led_panel_three_side_on",
       "x": 180,
       "y": 180
     },
-    "amount=2,enabled=true,facing=south,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_two_side_side_on",
-      "x": 0
-    },
-    "amount=2,enabled=true,facing=south,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=true,facing=south,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=true,facing=south,second_facing=up": {
+    "enabled=true,form=down_west": {
       "model": "smarthome_appliances:block/led_panel_two_side_on",
+      "x": 180,
+      "y": 270
+    },
+    "enabled=true,form=east": {
+      "model": "smarthome_appliances:block/led_panel_on",
+      "x": 90,
+      "y": 90
+    },
+    "enabled=true,form=north": {
+      "model": "smarthome_appliances:block/led_panel_on",
+      "x": 90,
       "y": 0
     },
-    "amount=2,enabled=true,facing=south,second_facing=west": {
+    "enabled=true,form=north_east": {
       "model": "smarthome_appliances:block/led_panel_two_side_side_on",
-      "x": 0
+      "x": 180,
+      "y": 0
     },
-    "amount=2,enabled=true,facing=up,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_broken"
+    "enabled=true,form=north_west": {
+      "model": "smarthome_appliances:block/led_panel_two_side_side_on",
+      "x": 180,
+      "y": 270
     },
-    "amount=2,enabled=true,facing=up,second_facing=east": {
+    "enabled=true,form=south": {
+      "model": "smarthome_appliances:block/led_panel_on",
+      "x": 90,
+      "y": 180
+    },
+    "enabled=true,form=south_east": {
+      "model": "smarthome_appliances:block/led_panel_two_side_side_on",
+      "x": 0,
+      "y": 0
+    },
+    "enabled=true,form=south_west": {
+      "model": "smarthome_appliances:block/led_panel_two_side_side_on",
+      "x": 0,
+      "y": 90
+    },
+    "enabled=true,form=up": {
+      "model": "smarthome_appliances:block/led_panel_on",
+      "x": 0,
+      "y": 0
+    },
+    "enabled=true,form=up_east": {
       "model": "smarthome_appliances:block/led_panel_two_side_on",
       "y": 270
     },
-    "amount=2,enabled=true,facing=up,second_facing=north": {
+    "enabled=true,form=up_north": {
       "model": "smarthome_appliances:block/led_panel_two_side_on",
       "y": 180
     },
-    "amount=2,enabled=true,facing=up,second_facing=south": {
+    "enabled=true,form=up_north_east": {
+      "model": "smarthome_appliances:block/led_panel_three_side_on",
+      "x": 0,
+      "y": 270
+    },
+    "enabled=true,form=up_north_west": {
+      "model": "smarthome_appliances:block/led_panel_three_side_on",
+      "x": 0,
+      "y": 180
+    },
+    "enabled=true,form=up_south": {
       "model": "smarthome_appliances:block/led_panel_two_side_on",
       "y": 0
     },
-    "amount=2,enabled=true,facing=up,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_broken"
+    "enabled=true,form=up_south_east": {
+      "model": "smarthome_appliances:block/led_panel_three_side_on",
+      "x": 0,
+      "y": 0
     },
-    "amount=2,enabled=true,facing=up,second_facing=west": {
+    "enabled=true,form=up_south_west": {
+      "model": "smarthome_appliances:block/led_panel_three_side_on",
+      "x": 0,
+      "y": 90
+    },
+    "enabled=true,form=up_west": {
       "model": "smarthome_appliances:block/led_panel_two_side_on",
       "y": 90
     },
-    "amount=2,enabled=true,facing=west,second_facing=down": {
-      "model": "smarthome_appliances:block/led_panel_two_side_on",
-      "x": 180,
+    "enabled=true,form=west": {
+      "model": "smarthome_appliances:block/led_panel_on",
+      "x": 90,
       "y": 270
-    },
-    "amount=2,enabled=true,facing=west,second_facing=east": {
-      "model": "smarthome_appliances:block/led_panel_broken"
-    },
-    "amount=2,enabled=true,facing=west,second_facing=north": {
-      "model": "smarthome_appliances:block/led_panel_two_side_side_on",
-      "x": 90
-    },
-    "amount=2,enabled=true,facing=west,second_facing=south": {
-      "model": "smarthome_appliances:block/led_panel_two_side_side_on",
-      "x": 0
-    },
-    "amount=2,enabled=true,facing=west,second_facing=up": {
-      "model": "smarthome_appliances:block/led_panel_two_side_on",
-      "y": 90
-    },
-    "amount=2,enabled=true,facing=west,second_facing=west": {
-      "model": "smarthome_appliances:block/led_panel_broken"
     }
   }
 }

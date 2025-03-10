@@ -22,6 +22,7 @@ class ModUaLanguageProvider(
         add(Blocks.LAMP.get(), "Лампа")
         add(Blocks.SWITCH.get(), "Перемикач")
         add(Blocks.LED_PANEL.get(), "Led-панель")
+        add(Blocks.SMOOTH_LED_PANEL.get(), "Гладка led-панель")
         add(ModText.CREATIVE_TAB, "А це треба перейменувати, друже")
         add(ModText.SCREWDRIVER_TARGET_BLOCK, "Цільовий блок %s")
         hooks.forEach { it.accept(this) }

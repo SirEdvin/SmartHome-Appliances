@@ -4,18 +4,15 @@ import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
-import net.minecraft.sounds.SoundEvents
-import net.minecraft.sounds.SoundSource
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.ItemInteractionResult
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.DyeColor
-import net.minecraft.world.item.DyeItem
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.*
+import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
@@ -28,7 +25,6 @@ import site.siredvin.broccolium.modules.base.block.BaseNBTBlock
 import site.siredvin.broccolium.modules.base.codec.BlockCodec
 import site.siredvin.broccolium.modules.base.codec.BlockCodec.blockEntityCodec
 import site.siredvin.broccolium.modules.base.util.BlockUtil
-import site.siredvin.smarthome.common.blockentity.LampBlockEntity
 import site.siredvin.smarthome.common.blockentity.SwitchBlockEntity
 import site.siredvin.smarthome.common.setup.BlockEntityTypes
 import site.siredvin.smarthome.common.setup.Blocks
@@ -84,6 +80,20 @@ class SwitchBlock: BaseNBTBlock<SwitchBlockEntity>(false, BlockUtil.decoration()
 
     override fun newBlockEntity(p0: BlockPos, p1: BlockState): SwitchBlockEntity? {
         return BlockEntityTypes.SWITCH.get().create(p0, p1)
+    }
+
+    override fun playerDestroy(
+        level: Level,
+        player: Player,
+        blockPos: BlockPos,
+        blockState: BlockState,
+        blockEntity: BlockEntity?,
+        itemStack: ItemStack
+    ) {
+        if (blockEntity is SwitchBlockEntity) {
+            blockEntity.disconnectAll(level)
+        }
+        super.playerDestroy(level, player, blockPos, blockState, blockEntity, itemStack)
     }
 
     @Deprecated("Deprecated in Java")

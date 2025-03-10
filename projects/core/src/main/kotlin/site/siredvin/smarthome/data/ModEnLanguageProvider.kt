@@ -22,6 +22,7 @@ class ModEnLanguageProvider(
         add(Blocks.LAMP.get(), "Lamp")
         add(Blocks.SWITCH.get(), "Switch")
         add(Blocks.LED_PANEL.get(), "Led panel")
+        add(Blocks.SMOOTH_LED_PANEL.get(), "Smooth led panel")
         add(ModText.CREATIVE_TAB, "Rename this, pal")
         add(ModText.SCREWDRIVER_TARGET_BLOCK, "Target block %s")
         hooks.forEach { it.accept(this) }

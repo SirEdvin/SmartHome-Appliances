@@ -1,0 +1,256 @@
+{
+  "variants": {
+    "enabled=false,form=down": {
+      "model": "smarthome_appliances:block/smooth_led_panel_off",
+      "x": 180,
+      "y": 0
+    },
+    "enabled=false,form=down_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_off",
+      "x": 180,
+      "y": 90
+    },
+    "enabled=false,form=down_north": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_off",
+      "x": 180,
+      "y": 0
+    },
+    "enabled=false,form=down_north_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_off",
+      "x": 180,
+      "y": 0
+    },
+    "enabled=false,form=down_north_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_off",
+      "x": 180,
+      "y": 270
+    },
+    "enabled=false,form=down_south": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_off",
+      "x": 180,
+      "y": 180
+    },
+    "enabled=false,form=down_south_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_off",
+      "x": 180,
+      "y": 90
+    },
+    "enabled=false,form=down_south_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_off",
+      "x": 180,
+      "y": 180
+    },
+    "enabled=false,form=down_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_off",
+      "x": 180,
+      "y": 270
+    },
+    "enabled=false,form=east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_off",
+      "x": 90,
+      "y": 90
+    },
+    "enabled=false,form=north": {
+      "model": "smarthome_appliances:block/smooth_led_panel_off",
+      "x": 90,
+      "y": 0
+    },
+    "enabled=false,form=north_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_side_off",
+      "x": 180,
+      "y": 0
+    },
+    "enabled=false,form=north_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_side_off",
+      "x": 180,
+      "y": 270
+    },
+    "enabled=false,form=south": {
+      "model": "smarthome_appliances:block/smooth_led_panel_off",
+      "x": 90,
+      "y": 180
+    },
+    "enabled=false,form=south_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_side_off",
+      "x": 0,
+      "y": 0
+    },
+    "enabled=false,form=south_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_side_off",
+      "x": 0,
+      "y": 90
+    },
+    "enabled=false,form=up": {
+      "model": "smarthome_appliances:block/smooth_led_panel_off",
+      "x": 0,
+      "y": 0
+    },
+    "enabled=false,form=up_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_off",
+      "y": 270
+    },
+    "enabled=false,form=up_north": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_off",
+      "y": 180
+    },
+    "enabled=false,form=up_north_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_off",
+      "x": 0,
+      "y": 270
+    },
+    "enabled=false,form=up_north_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_off",
+      "x": 0,
+      "y": 180
+    },
+    "enabled=false,form=up_south": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_off",
+      "y": 0
+    },
+    "enabled=false,form=up_south_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_off",
+      "x": 0,
+      "y": 0
+    },
+    "enabled=false,form=up_south_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_off",
+      "x": 0,
+      "y": 90
+    },
+    "enabled=false,form=up_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_off",
+      "y": 90
+    },
+    "enabled=false,form=west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_off",
+      "x": 90,
+      "y": 270
+    },
+    "enabled=true,form=down": {
+      "model": "smarthome_appliances:block/smooth_led_panel_on",
+      "x": 180,
+      "y": 0
+    },
+    "enabled=true,form=down_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_on",
+      "x": 180,
+      "y": 90
+    },
+    "enabled=true,form=down_north": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_on",
+      "x": 180,
+      "y": 0
+    },
+    "enabled=true,form=down_north_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_on",
+      "x": 180,
+      "y": 0
+    },
+    "enabled=true,form=down_north_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_on",
+      "x": 180,
+      "y": 270
+    },
+    "enabled=true,form=down_south": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_on",
+      "x": 180,
+      "y": 180
+    },
+    "enabled=true,form=down_south_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_on",
+      "x": 180,
+      "y": 90
+    },
+    "enabled=true,form=down_south_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_on",
+      "x": 180,
+      "y": 180
+    },
+    "enabled=true,form=down_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_on",
+      "x": 180,
+      "y": 270
+    },
+    "enabled=true,form=east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_on",
+      "x": 90,
+      "y": 90
+    },
+    "enabled=true,form=north": {
+      "model": "smarthome_appliances:block/smooth_led_panel_on",
+      "x": 90,
+      "y": 0
+    },
+    "enabled=true,form=north_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_side_on",
+      "x": 180,
+      "y": 0
+    },
+    "enabled=true,form=north_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_side_on",
+      "x": 180,
+      "y": 270
+    },
+    "enabled=true,form=south": {
+      "model": "smarthome_appliances:block/smooth_led_panel_on",
+      "x": 90,
+      "y": 180
+    },
+    "enabled=true,form=south_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_side_on",
+      "x": 0,
+      "y": 0
+    },
+    "enabled=true,form=south_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_side_on",
+      "x": 0,
+      "y": 90
+    },
+    "enabled=true,form=up": {
+      "model": "smarthome_appliances:block/smooth_led_panel_on",
+      "x": 0,
+      "y": 0
+    },
+    "enabled=true,form=up_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_on",
+      "y": 270
+    },
+    "enabled=true,form=up_north": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_on",
+      "y": 180
+    },
+    "enabled=true,form=up_north_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_on",
+      "x": 0,
+      "y": 270
+    },
+    "enabled=true,form=up_north_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_on",
+      "x": 0,
+      "y": 180
+    },
+    "enabled=true,form=up_south": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_on",
+      "y": 0
+    },
+    "enabled=true,form=up_south_east": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_on",
+      "x": 0,
+      "y": 0
+    },
+    "enabled=true,form=up_south_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_three_side_on",
+      "x": 0,
+      "y": 90
+    },
+    "enabled=true,form=up_west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_two_side_on",
+      "y": 90
+    },
+    "enabled=true,form=west": {
+      "model": "smarthome_appliances:block/smooth_led_panel_on",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

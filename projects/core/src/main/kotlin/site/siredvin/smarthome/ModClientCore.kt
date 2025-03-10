@@ -7,10 +7,8 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
 import site.siredvin.smarthome.client.renderer.SwitchBlockEntityRenderer
-import site.siredvin.smarthome.common.block.LampBlockColor
-import site.siredvin.smarthome.common.block.LedPanelBlockColor
-import site.siredvin.smarthome.common.item.LampItemColor
-import site.siredvin.smarthome.common.item.LedPanelItemColor
+import site.siredvin.smarthome.common.block.LightBlockColor
+import site.siredvin.smarthome.common.item.LightItemColor
 import site.siredvin.smarthome.common.setup.BlockEntityTypes
 import site.siredvin.smarthome.common.setup.Blocks
 import java.util.function.Consumer
@@ -24,13 +22,15 @@ object ModClientCore {
     }
 
     fun registerBlockColors(blockColors: BlockColors) {
-        blockColors.register(LampBlockColor(), Blocks.LAMP.get())
-        blockColors.register(LedPanelBlockColor(), Blocks.LED_PANEL.get())
+        blockColors.register(LightBlockColor, Blocks.LAMP.get())
+        blockColors.register(LightBlockColor, Blocks.LED_PANEL.get())
+        blockColors.register(LightBlockColor, Blocks.SMOOTH_LED_PANEL.get())
     }
 
     fun registerItemColors(itemColors: ItemColors) {
-        itemColors.register(LampItemColor(), Blocks.LAMP.get().asItem())
-        itemColors.register(LedPanelItemColor(), Blocks.LED_PANEL.get().asItem())
+        itemColors.register(LightItemColor, Blocks.LAMP.get().asItem())
+        itemColors.register(LightItemColor, Blocks.LED_PANEL.get().asItem())
+        itemColors.register(LightItemColor, Blocks.SMOOTH_LED_PANEL.get().asItem())
     }
 
     @Suppress("UNCHECKED_CAST")

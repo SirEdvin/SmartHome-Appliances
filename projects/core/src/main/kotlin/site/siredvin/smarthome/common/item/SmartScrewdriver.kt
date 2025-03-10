@@ -14,9 +14,9 @@ import net.minecraft.world.item.component.CustomData
 import net.minecraft.world.item.context.UseOnContext
 import net.minecraft.world.level.Level
 import site.siredvin.broccolium.modules.base.item.DescriptiveItem
-import site.siredvin.smarthome.common.blockentity.LampBlockEntity
 import site.siredvin.smarthome.common.blockentity.SwitchBlockEntity
 import site.siredvin.smarthome.data.ModText
+import site.siredvin.smarthome.tags.ModBlockTags
 
 class SmartScrewdriver: DescriptiveItem(Properties().stacksTo(1)) {
 
@@ -60,11 +60,11 @@ class SmartScrewdriver: DescriptiveItem(Properties().stacksTo(1)) {
             itemInHand.set(DataComponents.CUSTOM_DATA, CustomData.of(data))
             return InteractionResult.SUCCESS
         }
-        if (data.contains(TARGET_BLOCK_TAG) && blockEntity is LampBlockEntity) {
+        if (data.contains(TARGET_BLOCK_TAG) && blockState.`is`(ModBlockTags.LIGHT_BLOCK)) {
             val attachedBlockEntity = context.level.getBlockEntity(NbtUtils.readBlockPos(data, TARGET_BLOCK_TAG).get())
             if (attachedBlockEntity !is SwitchBlockEntity)
                 return InteractionResult.PASS
-            val result = attachedBlockEntity.toggle(blockEntity.blockPos, context.level)
+            val result = attachedBlockEntity.toggle(context.clickedPos, context.level)
             return if (result) InteractionResult.CONSUME else InteractionResult.SUCCESS
         }
         return super.useOn(context)

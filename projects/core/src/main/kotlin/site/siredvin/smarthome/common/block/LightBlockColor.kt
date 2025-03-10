@@ -6,9 +6,11 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.BlockAndTintGetter
 import net.minecraft.world.level.block.state.BlockState
 
-class LedPanelBlockColor: BlockColor {
+object LightBlockColor: BlockColor {
     override fun getColor(p0: BlockState, p1: BlockAndTintGetter?, p2: BlockPos?, p3: Int): Int {
-        val color = p0.getValue(LedPanelBlock.COLOR)
+        if (p3 == 1)
+            return if (p0.getValue(ColoredLightBlock.CONNECTED)) DyeColor.GREEN.textColor else DyeColor.RED.textColor
+        val color = p0.getValue(ColoredLightBlock.COLOR)
         if (color == DyeColor.BLACK) {
             return 0x212121 // Basically, dark gray2
         }

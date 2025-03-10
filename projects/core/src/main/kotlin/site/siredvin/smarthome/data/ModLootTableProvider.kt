@@ -28,6 +28,7 @@ object ModLootTableProvider {
         lootTable.computedDrop(Blocks.LAMP)
         lootTable.computedDrop(Blocks.SWITCH)
         lootTable.computedDrop(Blocks.LED_PANEL)
+        lootTable.computedDrop(Blocks.SMOOTH_LED_PANEL)
         lootTable.validate()
     }
 }

@@ -1,6 +1,7 @@
 {
   "block.smarthome_appliances.lamp": "Лампа",
   "block.smarthome_appliances.led_panel": "Led-панель",
+  "block.smarthome_appliances.smooth_led_panel": "Гладка led-панель",
   "block.smarthome_appliances.switch": "Перемикач",
   "item.smarthome_appliances.smart_screwdriver": "Розумна викрутна",
   "item.smarthome_appliances.smart_screwdriver.tooltip": "§6Іноді вона видає доволі високий звук",

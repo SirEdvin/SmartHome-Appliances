@@ -10,5 +10,6 @@ object Blocks {
     val LAMP = ModPlatform.registerBlock("lamp", ::LampBlock)
     val SWITCH = ModPlatform.registerBlock("switch", ::SwitchBlock)
     val LED_PANEL = ModPlatform.registerBlock("led_panel", ::LedPanelBlock, ::LedPanelItem)
+    val SMOOTH_LED_PANEL = ModPlatform.registerBlock("smooth_led_panel", ::LedPanelBlock, ::LedPanelItem)
     fun doSomething() {}
 }
