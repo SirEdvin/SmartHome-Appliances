@@ -2,22 +2,15 @@ package site.siredvin.smarthome.common.block
 
 import net.minecraft.core.BlockPos
 import net.minecraft.core.component.DataComponents
-import net.minecraft.sounds.SoundEvents
-import net.minecraft.sounds.SoundSource
-import net.minecraft.world.InteractionHand
-import net.minecraft.world.ItemInteractionResult
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.item.ItemEntity
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.DyeItem
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.component.BlockItemStateProperties
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.BlockState
-import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.block.state.properties.Property
-import net.minecraft.world.phys.BlockHitResult
 
 abstract class BaseItemBlock(properties: Properties): Block(properties) {
 
@@ -28,12 +21,12 @@ abstract class BaseItemBlock(properties: Properties): Block(properties) {
     open fun prepareItemStack(state: BlockState): ItemStack {
         val stack: ItemStack = createItemStack(state)
         val savableProperties: List<Property<*>> = savableProperties
-        if (savableProperties.isNotEmpty() && !defaultBlockState().equals(state)) {
-            val value = BlockItemStateProperties.EMPTY
+        if (savableProperties.isNotEmpty()) {
+            var value = BlockItemStateProperties.EMPTY
             savableProperties.forEach{
                 @Suppress("UNCHECKED_CAST")
                 it as Property<Comparable<Any>>
-                value.with(it, state.getValue(it))
+                value = value.with(it, state.getValue(it))
             }
             stack.set(DataComponents.BLOCK_STATE, value)
         }

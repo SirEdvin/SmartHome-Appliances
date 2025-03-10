@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "smarthome_appliances:lamp"
+    },
+    {
+      "item": "smarthome_appliances:lamp"
+    },
+    {
+      "item": "smarthome_appliances:lamp"
+    },
+    {
+      "item": "smarthome_appliances:lamp"
+    },
+    {
+      "item": "smarthome_appliances:lamp"
+    },
+    {
+      "item": "smarthome_appliances:lamp"
+    },
+    {
+      "item": "smarthome_appliances:lamp"
+    },
+    {
+      "item": "smarthome_appliances:lamp"
+    },
+    {
+      "item": "minecraft:blue_dye"
+    }
+  ],
+  "result": {
+    "components": {
+      "minecraft:block_state": {
+        "color": "blue"
+      }
+    },
+    "count": 8,
+    "id": "smarthome_appliances:lamp"
+  }
+}

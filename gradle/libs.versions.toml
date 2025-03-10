@@ -16,7 +16,7 @@ mixin = "0.8.5"
 
 # Only core mod dependenceis
 asm = "9.3"
-broccolium = "1.0.0-rc.3"
+broccolium = "1.0.0-rc.4"
 tweakium = "1.0.0-rc.2"
 peripheralium = "1.0.0-rc.2"
 

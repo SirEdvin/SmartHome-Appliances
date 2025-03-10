@@ -5,21 +5,18 @@ import net.minecraft.data.models.BlockModelGenerators
 import net.minecraft.data.models.blockstates.MultiVariantGenerator
 import net.minecraft.data.models.blockstates.PropertyDispatch
 import net.minecraft.data.models.blockstates.Variant
-import net.minecraft.data.models.blockstates.VariantProperties
 import net.minecraft.data.models.blockstates.VariantProperties.*
 import net.minecraft.data.models.model.ModelLocationUtils
 import net.minecraft.data.models.model.ModelTemplate
 import net.minecraft.data.models.model.TextureMapping
 import net.minecraft.data.models.model.TextureSlot
-import net.minecraft.network.protocol.game.ClientboundMoveEntityPacket.Rot
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.properties.BooleanProperty
 import site.siredvin.smarthome.ModCore
 import site.siredvin.smarthome.common.block.*
-import site.siredvin.smarthome.common.setup.Blocks
+import site.siredvin.smarthome.common.setup.ModBlocks
 import java.util.*
-import kotlin.math.min
 
 object ModBlockModelProvider {
 
@@ -118,7 +115,7 @@ object ModBlockModelProvider {
 
 
     fun lampBlock(generators: BlockModelGenerators) {
-        val block = Blocks.LAMP.get()
+        val block = ModBlocks.LAMP.get()
         val onModel =  ModelLocationUtils.getModelLocation(block, "_on")
         val offModel =  ModelLocationUtils.getModelLocation(block, "_off")
         generators.blockStateOutput.accept(
@@ -131,7 +128,7 @@ object ModBlockModelProvider {
     }
 
     private fun switchBlock(generators: BlockModelGenerators) {
-        val block = Blocks.SWITCH.get()
+        val block = ModBlocks.SWITCH.get()
         val onModel =  ModelLocationUtils.getModelLocation(block, "_on")
         val offModel =  ModelLocationUtils.getModelLocation(block, "_off")
         generators.blockStateOutput.accept(
@@ -222,7 +219,7 @@ object ModBlockModelProvider {
     fun addModels(generators: BlockModelGenerators) {
         lampBlock(generators)
         switchBlock(generators)
-        panelBlock(generators, Blocks.LED_PANEL.get())
-        panelBlock(generators, Blocks.SMOOTH_LED_PANEL.get(), fillingTexture = ResourceLocation.withDefaultNamespace("block/iron_block"))
+        panelBlock(generators, ModBlocks.LED_PANEL.get())
+        panelBlock(generators, ModBlocks.SMOOTH_LED_PANEL.get(), fillingTexture = ResourceLocation.withDefaultNamespace("block/iron_block"))
     }
 }

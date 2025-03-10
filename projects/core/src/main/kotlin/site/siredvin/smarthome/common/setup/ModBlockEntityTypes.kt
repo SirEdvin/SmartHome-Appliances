@@ -4,11 +4,11 @@ import site.siredvin.broccolium.modules.platform.PlatformToolkit
 import site.siredvin.smarthome.common.blockentity.SwitchBlockEntity
 import site.siredvin.smarthome.xplat.ModPlatform
 
-object BlockEntityTypes {
+object ModBlockEntityTypes {
     val SWITCH = ModPlatform.registerBlockEntity("switch") {
         PlatformToolkit.get().createBlockEntityType(
             ::SwitchBlockEntity,
-            Blocks.SWITCH.get()
+            ModBlocks.SWITCH.get()
         )
     }
 

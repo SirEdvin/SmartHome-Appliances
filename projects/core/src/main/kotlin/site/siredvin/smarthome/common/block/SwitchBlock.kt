@@ -26,8 +26,8 @@ import site.siredvin.broccolium.modules.base.codec.BlockCodec
 import site.siredvin.broccolium.modules.base.codec.BlockCodec.blockEntityCodec
 import site.siredvin.broccolium.modules.base.util.BlockUtil
 import site.siredvin.smarthome.common.blockentity.SwitchBlockEntity
-import site.siredvin.smarthome.common.setup.BlockEntityTypes
-import site.siredvin.smarthome.common.setup.Blocks
+import site.siredvin.smarthome.common.setup.ModBlockEntityTypes
+import site.siredvin.smarthome.common.setup.ModBlocks
 
 class SwitchBlock: BaseNBTBlock<SwitchBlockEntity>(false, BlockUtil.decoration()) {
     companion object {
@@ -68,18 +68,18 @@ class SwitchBlock: BaseNBTBlock<SwitchBlockEntity>(false, BlockUtil.decoration()
     override fun codec(): MapCodec<SwitchBlock> {
         return RecordCodecBuilder.mapCodec {
             return@mapCodec it.group(
-                blockEntityCodec<SwitchBlock, BlockEntityType<SwitchBlockEntity>, SwitchBlockEntity> { BlockEntityTypes.SWITCH },
+                blockEntityCodec<SwitchBlock, BlockEntityType<SwitchBlockEntity>, SwitchBlockEntity> { ModBlockEntityTypes.SWITCH },
                 BlockCodec.propertiesCodec<SwitchBlock>(),
             ).apply(it) { _, _ -> SwitchBlock() }
         }
     }
 
     override fun createItemStack(): ItemStack {
-        return Blocks.SWITCH.get().asItem().defaultInstance
+        return ModBlocks.SWITCH.get().asItem().defaultInstance
     }
 
     override fun newBlockEntity(p0: BlockPos, p1: BlockState): SwitchBlockEntity? {
-        return BlockEntityTypes.SWITCH.get().create(p0, p1)
+        return ModBlockEntityTypes.SWITCH.get().create(p0, p1)
     }
 
     override fun playerDestroy(

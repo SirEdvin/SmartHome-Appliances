@@ -4,7 +4,7 @@ import net.minecraft.world.item.CreativeModeTab
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import site.siredvin.broccolium.modules.platform.api.InnerBasePlatform
-import site.siredvin.smarthome.common.setup.Items
+import site.siredvin.smarthome.common.setup.ModItems
 import site.siredvin.smarthome.data.ModText
 import site.siredvin.smarthome.xplat.ModPlatform
 import site.siredvin.smarthome.xplat.ModRecipeIngredients
@@ -14,7 +14,7 @@ object ModCore {
 
     val LOGGER: Logger = LogManager.getLogger(MOD_ID)
 
-    fun configureCreativeTab(builder: CreativeModeTab.Builder): CreativeModeTab.Builder = builder.icon { Items.SMART_SCREWDRIVER.get().defaultInstance }
+    fun configureCreativeTab(builder: CreativeModeTab.Builder): CreativeModeTab.Builder = builder.icon { ModItems.SMART_SCREWDRIVER.get().defaultInstance }
         .title(ModText.CREATIVE_TAB.text)
         .displayItems { _, output ->
             ModPlatform.holder.blocks.forEach { output.accept(it.get()) }

@@ -16,7 +16,7 @@ import net.minecraft.world.phys.Vec3
 import site.siredvin.broccolium.modules.base.ext.toVec3
 import site.siredvin.smarthome.common.blockentity.SwitchBlockEntity
 import site.siredvin.smarthome.common.item.SmartScrewdriver
-import site.siredvin.smarthome.common.setup.Items
+import site.siredvin.smarthome.common.setup.ModItems
 import kotlin.math.min
 
 object SmartScrewdriverRenderingLayer {
@@ -58,7 +58,7 @@ object SmartScrewdriverRenderingLayer {
     fun render(pose: PoseStack, bufferSource: MultiBufferSource, level: ClientLevel, camera: Camera) {
         val minecraft = Minecraft.getInstance()
         val selectedItem = minecraft.player?.inventory?.getSelected()
-        if (selectedItem != null && selectedItem.`is`(Items.SMART_SCREWDRIVER.get())) {
+        if (selectedItem != null && selectedItem.`is`(ModItems.SMART_SCREWDRIVER.get())) {
             val selectedBlock = NbtUtils.readBlockPos(selectedItem.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag(), SmartScrewdriver.TARGET_BLOCK_TAG)
             if (selectedBlock.isPresent) {
                 renderTargetBlockBox(pose, bufferSource, level, selectedBlock.get(), camera)

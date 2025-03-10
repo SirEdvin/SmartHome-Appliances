@@ -14,10 +14,10 @@ import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import site.siredvin.broccolium.modules.base.blockentity.MutableNBTBlockEntity
 import site.siredvin.smarthome.common.block.ColoredLightBlock
-import site.siredvin.smarthome.common.setup.BlockEntityTypes
+import site.siredvin.smarthome.common.setup.ModBlockEntityTypes
 import site.siredvin.smarthome.tags.ModBlockTags
 
-class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTBlockEntity(BlockEntityTypes.SWITCH.get(), blockPos, blockState) {
+class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTBlockEntity(ModBlockEntityTypes.SWITCH.get(), blockPos, blockState) {
 
     companion object {
         const val CONNECTED_BLOCKS_TAG = "connectedBlocks"

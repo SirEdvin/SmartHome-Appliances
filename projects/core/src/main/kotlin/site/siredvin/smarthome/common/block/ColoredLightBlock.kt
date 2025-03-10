@@ -32,6 +32,10 @@ abstract class ColoredLightBlock: BaseItemBlock(BlockUtil.decoration().lightLeve
     fun buildDeafaultState() = getStateDefinition().any().setValue(ENALBED, false).setValue(
         COLOR, DyeColor.WHITE).setValue(CONNECTED, false)
 
+    fun createColoredItemStack(color: DyeColor): ItemStack {
+        return prepareItemStack(defaultBlockState().setValue(COLOR, color))
+    }
+
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         super.createBlockStateDefinition(builder)
         builder.add(ENALBED)

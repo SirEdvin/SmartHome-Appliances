@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "smarthome_appliances:lamp"
+    },
+    {
+      "item": "minecraft:light_gray_dye"
+    }
+  ],
+  "result": {
+    "components": {
+      "minecraft:block_state": {
+        "color": "light_gray"
+      }
+    },
+    "count": 1,
+    "id": "smarthome_appliances:lamp"
+  }
+}

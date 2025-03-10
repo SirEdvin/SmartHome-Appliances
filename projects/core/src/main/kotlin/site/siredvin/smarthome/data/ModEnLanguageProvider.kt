@@ -1,8 +1,8 @@
 package site.siredvin.smarthome.data
 
 import net.minecraft.data.PackOutput
-import site.siredvin.smarthome.common.setup.Blocks
-import site.siredvin.smarthome.common.setup.Items
+import site.siredvin.smarthome.common.setup.ModBlocks
+import site.siredvin.smarthome.common.setup.ModItems
 import java.util.function.Consumer
 
 class ModEnLanguageProvider(
@@ -18,11 +18,11 @@ class ModEnLanguageProvider(
     }
 
     override fun addTranslations() {
-        add(Items.SMART_SCREWDRIVER.get(), "Smart screwdriver", "§6Sometimes you can hear it makes a pretty pitch sound")
-        add(Blocks.LAMP.get(), "Lamp")
-        add(Blocks.SWITCH.get(), "Switch")
-        add(Blocks.LED_PANEL.get(), "Led panel")
-        add(Blocks.SMOOTH_LED_PANEL.get(), "Smooth led panel")
+        add(ModItems.SMART_SCREWDRIVER.get(), "Smart screwdriver", "§6Sometimes you can hear it makes a pretty pitch sound")
+        add(ModBlocks.LAMP.get(), "Lamp")
+        add(ModBlocks.SWITCH.get(), "Switch")
+        add(ModBlocks.LED_PANEL.get(), "Led panel")
+        add(ModBlocks.SMOOTH_LED_PANEL.get(), "Smooth led panel")
         add(ModText.CREATIVE_TAB, "Rename this, pal")
         add(ModText.SCREWDRIVER_TARGET_BLOCK, "Target block %s")
         hooks.forEach { it.accept(this) }
