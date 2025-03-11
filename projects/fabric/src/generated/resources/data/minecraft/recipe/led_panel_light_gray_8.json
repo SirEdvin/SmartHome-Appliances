@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "smarthome_appliances:led_panel"
+    },
+    {
+      "item": "smarthome_appliances:led_panel"
+    },
+    {
+      "item": "smarthome_appliances:led_panel"
+    },
+    {
+      "item": "smarthome_appliances:led_panel"
+    },
+    {
+      "item": "smarthome_appliances:led_panel"
+    },
+    {
+      "item": "smarthome_appliances:led_panel"
+    },
+    {
+      "item": "smarthome_appliances:led_panel"
+    },
+    {
+      "item": "smarthome_appliances:led_panel"
+    },
+    {
+      "item": "minecraft:light_gray_dye"
+    }
+  ],
+  "result": {
+    "components": {
+      "minecraft:block_state": {
+        "color": "light_gray"
+      }
+    },
+    "count": 8,
+    "id": "smarthome_appliances:led_panel"
+  }
+}

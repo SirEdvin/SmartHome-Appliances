@@ -1,6 +1,11 @@
 package site.siredvin.smarthome.xplat
 
+import net.minecraft.world.item.ItemStack
+import net.minecraft.world.item.crafting.Ingredient
+
 interface ModRecipeIngredients {
+
+    fun itemStackIngredient(itemStack: ItemStack): Ingredient
 
     companion object {
         private var impl: ModRecipeIngredients? = null

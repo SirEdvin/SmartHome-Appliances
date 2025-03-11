@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "fabric:type": "fabric:components",
+      "base": {
+        "item": "smarthome_appliances:smooth_led_panel"
+      },
+      "components": {
+        "minecraft:block_state": {
+          "color": "light_blue"
+        }
+      }
+    }
+  ],
+  "result": {
+    "components": {
+      "minecraft:block_state": {
+        "color": "light_blue"
+      }
+    },
+    "count": 1,
+    "id": "smarthome_appliances:led_panel"
+  }
+}
