@@ -20,7 +20,7 @@ import net.minecraft.world.level.block.state.properties.Property
 import net.minecraft.world.phys.BlockHitResult
 import site.siredvin.broccolium.modules.base.util.BlockUtil
 
-abstract class ColoredLightBlock: BaseItemBlock(BlockUtil.decoration().lightLevel {  if (it.getValue(BlockStateProperties.ENABLED)) 15 else 0 }) {
+abstract class ColoredLightBlock : BaseItemBlock(BlockUtil.decoration().lightLevel { if (it.getValue(BlockStateProperties.ENABLED)) 15 else 0 }) {
     companion object {
         val ENALBED = BlockStateProperties.ENABLED
         val CONNECTED = BooleanProperty.create("connected")
@@ -30,11 +30,11 @@ abstract class ColoredLightBlock: BaseItemBlock(BlockUtil.decoration().lightLeve
         get() = listOf(COLOR)
 
     fun buildDeafaultState() = getStateDefinition().any().setValue(ENALBED, false).setValue(
-        COLOR, DyeColor.WHITE).setValue(CONNECTED, false)
+        COLOR,
+        DyeColor.WHITE,
+    ).setValue(CONNECTED, false)
 
-    fun createColoredItemStack(color: DyeColor): ItemStack {
-        return prepareItemStack(defaultBlockState().setValue(COLOR, color))
-    }
+    fun createColoredItemStack(color: DyeColor): ItemStack = prepareItemStack(defaultBlockState().setValue(COLOR, color))
 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         super.createBlockStateDefinition(builder)
@@ -65,7 +65,7 @@ abstract class ColoredLightBlock: BaseItemBlock(BlockUtil.decoration().lightLeve
             SoundEvents.LEVER_CLICK,
             SoundSource.BLOCKS,
             0.3f,
-            if (blockState.getValue(BlockStateProperties.ENABLED)) 0.5f else 0.6f
+            if (blockState.getValue(BlockStateProperties.ENABLED)) 0.5f else 0.6f,
         )
         return ItemInteractionResult.SUCCESS
     }

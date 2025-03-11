@@ -29,7 +29,7 @@ import site.siredvin.smarthome.common.blockentity.SwitchBlockEntity
 import site.siredvin.smarthome.common.setup.ModBlockEntityTypes
 import site.siredvin.smarthome.common.setup.ModBlocks
 
-class SwitchBlock: BaseNBTBlock<SwitchBlockEntity>(false, BlockUtil.decoration()) {
+class SwitchBlock : BaseNBTBlock<SwitchBlockEntity>(false, BlockUtil.decoration()) {
     companion object {
         val FACING = BlockStateProperties.FACING
         val ENALBED = BlockStateProperties.ENABLED
@@ -53,15 +53,23 @@ class SwitchBlock: BaseNBTBlock<SwitchBlockEntity>(false, BlockUtil.decoration()
 
     @Deprecated("Deprecated in Java")
     @Suppress("DEPRECATION", "KotlinRedundantDiagnosticSuppress")
-    override fun mirror(state: BlockState, mirror: Mirror): BlockState = state.rotate(mirror.getRotation(state.getValue(
-        LampBlock.FACING
-    )))
+    override fun mirror(state: BlockState, mirror: Mirror): BlockState = state.rotate(
+        mirror.getRotation(
+            state.getValue(
+                LampBlock.FACING,
+            ),
+        ),
+    )
 
     @Deprecated("Deprecated in Java")
     override fun rotate(state: BlockState, rotation: Rotation): BlockState = state.setValue(
-        LampBlock.FACING, rotation.rotate(state.getValue(
-            LampBlock.FACING
-        )))
+        LampBlock.FACING,
+        rotation.rotate(
+            state.getValue(
+                LampBlock.FACING,
+            ),
+        ),
+    )
 
     override fun getStateForPlacement(context: BlockPlaceContext): BlockState = defaultBlockState().setValue(LampBlock.FACING, context.clickedFace)
 
@@ -74,13 +82,9 @@ class SwitchBlock: BaseNBTBlock<SwitchBlockEntity>(false, BlockUtil.decoration()
         }
     }
 
-    override fun createItemStack(): ItemStack {
-        return ModBlocks.SWITCH.get().asItem().defaultInstance
-    }
+    override fun createItemStack(): ItemStack = ModBlocks.SWITCH.get().asItem().defaultInstance
 
-    override fun newBlockEntity(p0: BlockPos, p1: BlockState): SwitchBlockEntity? {
-        return ModBlockEntityTypes.SWITCH.get().create(p0, p1)
-    }
+    override fun newBlockEntity(p0: BlockPos, p1: BlockState): SwitchBlockEntity? = ModBlockEntityTypes.SWITCH.get().create(p0, p1)
 
     override fun playerDestroy(
         level: Level,
@@ -88,7 +92,7 @@ class SwitchBlock: BaseNBTBlock<SwitchBlockEntity>(false, BlockUtil.decoration()
         blockPos: BlockPos,
         blockState: BlockState,
         blockEntity: BlockEntity?,
-        itemStack: ItemStack
+        itemStack: ItemStack,
     ) {
         if (blockEntity is SwitchBlockEntity) {
             blockEntity.disconnectAll(level)

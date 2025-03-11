@@ -11,7 +11,7 @@ object ModTagsProvider {
     val LIGHT_BLOCKS = listOf(
         ModBlocks.LAMP,
         ModBlocks.LED_PANEL,
-        ModBlocks.SMOOTH_LED_PANEL
+        ModBlocks.SMOOTH_LED_PANEL,
     )
 
     @JvmStatic

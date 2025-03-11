@@ -2,7 +2,6 @@ package site.siredvin.smarthome.data
 
 import net.minecraft.data.PackOutput
 import net.minecraft.world.item.DyeColor
-import net.minecraft.world.level.block.Block
 import site.siredvin.smarthome.common.setup.ModBlocks
 import site.siredvin.smarthome.common.setup.ModItems
 import java.util.function.Consumer

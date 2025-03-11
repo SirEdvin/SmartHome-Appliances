@@ -54,6 +54,10 @@ dependencies {
     modImplementation(libs.bundles.fabric.base) {
         isTransitive = false
     }
+    modImplementation(libs.bundles.fabric.embed) {
+        isTransitive = false
+    }
+    include(libs.bundles.fabric.embed)
 
     modRuntimeOnly(libs.bundles.externalMods.fabric.runtime) {
         isTransitive = false

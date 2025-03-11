@@ -17,7 +17,7 @@ import site.siredvin.smarthome.common.block.ColoredLightBlock
 import site.siredvin.smarthome.common.setup.ModBlockEntityTypes
 import site.siredvin.smarthome.tags.ModBlockTags
 
-class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTBlockEntity(ModBlockEntityTypes.SWITCH.get(), blockPos, blockState) {
+class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState) : MutableNBTBlockEntity(ModBlockEntityTypes.SWITCH.get(), blockPos, blockState) {
 
     companion object {
         const val CONNECTED_BLOCKS_TAG = "connectedBlocks"
@@ -33,16 +33,19 @@ class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTB
             val blocks = data.getList(CONNECTED_BLOCKS_TAG, Tag.TAG_INT_ARRAY.toInt())
             blocks.forEach {
                 if (it is IntArrayTag) {
-                    if (it.size == 3)
-                        internalConnectedBlocks.add(BlockPos(
-                            it[0].asInt,
-                            it[1].asInt,
-                            it[2].asInt
-                        ))
+                    if (it.size == 3) {
+                        internalConnectedBlocks.add(
+                            BlockPos(
+                                it[0].asInt,
+                                it[1].asInt,
+                                it[2].asInt,
+                            ),
+                        )
+                    }
                 }
             }
         }
-        return state?: blockState
+        return state ?: blockState
     }
 
     fun connect(target: BlockPos, level: Level): Boolean {
@@ -96,14 +99,24 @@ class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTB
 
     fun switch(player: Player?, level: Level) {
         val targetValue = !blockState.getValue(
-            BlockStateProperties.ENABLED)
-        pushInternalDataChangeToClient(blockState.setValue(
-            BlockStateProperties.ENABLED, targetValue))
+            BlockStateProperties.ENABLED,
+        )
+        pushInternalDataChangeToClient(
+            blockState.setValue(
+                BlockStateProperties.ENABLED,
+                targetValue,
+            ),
+        )
         internalConnectedBlocks.forEach {
             val targetState = level.getBlockState(it)
             if (targetState.`is`(ModBlockTags.LIGHT_BLOCK)) {
-                level.setBlockAndUpdate(it, targetState.setValue(
-                    ColoredLightBlock.ENALBED, targetValue))
+                level.setBlockAndUpdate(
+                    it,
+                    targetState.setValue(
+                        ColoredLightBlock.ENALBED,
+                        targetValue,
+                    ),
+                )
             }
         }
         if (player != null) {
@@ -113,7 +126,7 @@ class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState): MutableNBTB
                 SoundEvents.LEVER_CLICK,
                 SoundSource.BLOCKS,
                 0.3f,
-                if (blockState.getValue(BlockStateProperties.ENABLED)) 0.5f else 0.6f
+                if (blockState.getValue(BlockStateProperties.ENABLED)) 0.5f else 0.6f,
             )
         }
     }

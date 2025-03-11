@@ -5,7 +5,7 @@ import site.siredvin.smarthome.ModCore
 
 enum class ModText : TextRecord {
     CREATIVE_TAB,
-    SCREWDRIVER_TARGET_BLOCK
+    SCREWDRIVER_TARGET_BLOCK,
     ;
 
     override val textID: String by lazy {

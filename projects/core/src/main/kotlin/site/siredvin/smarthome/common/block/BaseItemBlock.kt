@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.properties.Property
 
-abstract class BaseItemBlock(properties: Properties): Block(properties) {
+abstract class BaseItemBlock(properties: Properties) : Block(properties) {
 
     abstract val savableProperties: List<Property<*>>
 
@@ -23,7 +23,7 @@ abstract class BaseItemBlock(properties: Properties): Block(properties) {
         val savableProperties: List<Property<*>> = savableProperties
         if (savableProperties.isNotEmpty()) {
             var value = BlockItemStateProperties.EMPTY
-            savableProperties.forEach{
+            savableProperties.forEach {
                 @Suppress("UNCHECKED_CAST")
                 it as Property<Comparable<Any>>
                 value = value.with(it, state.getValue(it))

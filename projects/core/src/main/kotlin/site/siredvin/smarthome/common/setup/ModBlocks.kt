@@ -1,10 +1,10 @@
 package site.siredvin.smarthome.common.setup
 
 import site.siredvin.smarthome.common.block.LampBlock
-import site.siredvin.smarthome.common.block.SwitchBlock
 import site.siredvin.smarthome.common.block.LedPanelBlock
-import site.siredvin.smarthome.common.item.LedPanelItem
+import site.siredvin.smarthome.common.block.SwitchBlock
 import site.siredvin.smarthome.common.item.LampItem
+import site.siredvin.smarthome.common.item.LedPanelItem
 import site.siredvin.smarthome.xplat.ModPlatform
 
 object ModBlocks {

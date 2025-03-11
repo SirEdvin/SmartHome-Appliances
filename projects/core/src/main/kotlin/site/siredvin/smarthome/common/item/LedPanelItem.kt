@@ -12,16 +12,17 @@ import site.siredvin.smarthome.common.block.ColoredLightBlock
 import site.siredvin.smarthome.common.block.LedPanelBlock
 import site.siredvin.smarthome.common.block.LedPanelForm
 
-class LedPanelItem(block: Block): DescriptiveBlockItem(block, Properties().stacksTo(64)) {
+class LedPanelItem(block: Block) : DescriptiveBlockItem(block, Properties().stacksTo(64)) {
 
     override fun getDescriptionId(stack: ItemStack): String {
         val color = stack.getOrDefault(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY).get(ColoredLightBlock.COLOR) ?: DyeColor.WHITE
-        return "${descriptionId}.${color.getName().lowercase()}"
+        return "$descriptionId.${color.getName().lowercase()}"
     }
 
     override fun place(context: BlockPlaceContext): InteractionResult {
-        if (context.canPlace())
+        if (context.canPlace()) {
             return super.place(context)
+        }
         val targetState = context.level.getBlockState(context.clickedPos)
         if (targetState.`is`(block)) {
             val form = targetState.getValue(LedPanelBlock.FORM)

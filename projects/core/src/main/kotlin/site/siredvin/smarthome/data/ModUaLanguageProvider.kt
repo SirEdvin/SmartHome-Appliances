@@ -29,7 +29,7 @@ class ModUaLanguageProvider(
             DyeColor.BROWN to "Коричнева",
             DyeColor.GREEN to "Зелена",
             DyeColor.RED to "Червона",
-            DyeColor.BLACK to "Чорна"
+            DyeColor.BLACK to "Чорна",
         )
 
         fun addHook(hook: Consumer<ModUaLanguageProvider>) {

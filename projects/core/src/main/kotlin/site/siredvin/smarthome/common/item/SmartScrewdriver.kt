@@ -18,7 +18,7 @@ import site.siredvin.smarthome.common.blockentity.SwitchBlockEntity
 import site.siredvin.smarthome.data.ModText
 import site.siredvin.smarthome.tags.ModBlockTags
 
-class SmartScrewdriver: DescriptiveItem(Properties().stacksTo(1)) {
+class SmartScrewdriver : DescriptiveItem(Properties().stacksTo(1)) {
 
     companion object {
         val TARGET_BLOCK_TAG = "targetBlock"
@@ -26,30 +26,36 @@ class SmartScrewdriver: DescriptiveItem(Properties().stacksTo(1)) {
 
     override fun use(level: Level, player: Player, interactionHand: InteractionHand): InteractionResultHolder<ItemStack> {
         val itemInHand = player.getItemInHand(interactionHand)
-        if (interactionHand == InteractionHand.OFF_HAND)
+        if (interactionHand == InteractionHand.OFF_HAND) {
             return InteractionResultHolder.pass(itemInHand)
+        }
         val customData = itemInHand.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY)
-        if (customData.isEmpty)
+        if (customData.isEmpty) {
             return InteractionResultHolder.pass(itemInHand)
+        }
         val data = customData.copyTag()
-        if (!data.contains(TARGET_BLOCK_TAG))
+        if (!data.contains(TARGET_BLOCK_TAG)) {
             return InteractionResultHolder.pass(itemInHand)
+        }
         itemInHand.set(DataComponents.CUSTOM_DATA, CustomData.EMPTY)
         return InteractionResultHolder.pass(itemInHand)
     }
 
     override fun useOn(context: UseOnContext): InteractionResult {
-        if (context.player?.pose != Pose.CROUCHING)
+        if (context.player?.pose != Pose.CROUCHING) {
             return InteractionResult.PASS
+        }
         val blockState = context.level.getBlockState(context.clickedPos)
         val itemInHand = context.itemInHand
         if (blockState.isAir) {
             val customData = itemInHand.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY)
-            if (customData.isEmpty)
+            if (customData.isEmpty) {
                 return InteractionResult.PASS
+            }
             val data = customData.copyTag()
-            if (!data.contains(TARGET_BLOCK_TAG))
+            if (!data.contains(TARGET_BLOCK_TAG)) {
                 return InteractionResult.PASS
+            }
             itemInHand.set(DataComponents.CUSTOM_DATA, CustomData.EMPTY)
             return InteractionResult.SUCCESS
         }
@@ -62,8 +68,9 @@ class SmartScrewdriver: DescriptiveItem(Properties().stacksTo(1)) {
         }
         if (data.contains(TARGET_BLOCK_TAG) && blockState.`is`(ModBlockTags.LIGHT_BLOCK)) {
             val attachedBlockEntity = context.level.getBlockEntity(NbtUtils.readBlockPos(data, TARGET_BLOCK_TAG).get())
-            if (attachedBlockEntity !is SwitchBlockEntity)
+            if (attachedBlockEntity !is SwitchBlockEntity) {
                 return InteractionResult.PASS
+            }
             val result = attachedBlockEntity.toggle(context.clickedPos, context.level)
             return if (result) InteractionResult.CONSUME else InteractionResult.SUCCESS
         }
@@ -74,15 +81,16 @@ class SmartScrewdriver: DescriptiveItem(Properties().stacksTo(1)) {
         itemStack: ItemStack,
         context: TooltipContext,
         list: MutableList<Component>,
-        tooltipFlag: TooltipFlag
+        tooltipFlag: TooltipFlag,
     ) {
         val data = itemStack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY)
         if (!data.isEmpty) {
             val tag = data.copyTag()
             if (tag.contains(TARGET_BLOCK_TAG)) {
                 val targetPos = NbtUtils.readBlockPos(tag, TARGET_BLOCK_TAG)
-                if (targetPos.isPresent)
+                if (targetPos.isPresent) {
                     list.add(ModText.SCREWDRIVER_TARGET_BLOCK.format(targetPos.get()))
+                }
             }
         }
         super.appendHoverText(itemStack, context, list, tooltipFlag)

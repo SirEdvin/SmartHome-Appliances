@@ -26,29 +26,33 @@ object ModBlockModelProvider {
     private val LED_PANEL_MODEL_TEMPLATE = ModelTemplate(
         Optional.of(ResourceLocation.fromNamespaceAndPath(ModCore.MOD_ID, "block/led_panel")),
         Optional.empty(),
-        ZERO, ONE,
-        TextureSlot.PARTICLE
+        ZERO,
+        ONE,
+        TextureSlot.PARTICLE,
     )
 
     private val LED_PANEL_TWO_SIDE_MODEL_TEMPLATE = ModelTemplate(
         Optional.of(ResourceLocation.fromNamespaceAndPath(ModCore.MOD_ID, "block/led_panel_two_side")),
         Optional.empty(),
-        ZERO, ONE,
-        TextureSlot.PARTICLE
+        ZERO,
+        ONE,
+        TextureSlot.PARTICLE,
     )
 
     private val LED_PANEL_TWO_SIDE_SIDE_MODEL_TEMPLATE = ModelTemplate(
         Optional.of(ResourceLocation.fromNamespaceAndPath(ModCore.MOD_ID, "block/led_panel_two_side_side")),
         Optional.empty(),
-        ZERO, ONE,
-        TextureSlot.PARTICLE
+        ZERO,
+        ONE,
+        TextureSlot.PARTICLE,
     )
 
     private val LED_PANEL_THREE_SIDE_MODEL_TEMPLATE = ModelTemplate(
         Optional.of(ResourceLocation.fromNamespaceAndPath(ModCore.MOD_ID, "block/led_panel_three_side")),
         Optional.empty(),
-        ZERO, ONE,
-        TextureSlot.PARTICLE
+        ZERO,
+        ONE,
+        TextureSlot.PARTICLE,
     )
 
     private fun toYAnglePedestal(direction: Direction): Rotation = when (direction) {
@@ -65,13 +69,13 @@ object ModBlockModelProvider {
             else -> Pair(Rotation.R0, Rotation.R0)
         }
         Direction.NORTH -> when (second) {
-            Direction.WEST ->  Pair(Rotation.R180, Rotation.R270)
+            Direction.WEST -> Pair(Rotation.R180, Rotation.R270)
             else -> Pair(Rotation.R180, Rotation.R0)
         }
         else -> Pair(Rotation.R0, Rotation.R0)
     }
 
-    private fun toThreeFaceRotation(form: LedPanelForm): Pair<Rotation, Rotation> = when(form) {
+    private fun toThreeFaceRotation(form: LedPanelForm): Pair<Rotation, Rotation> = when (form) {
         LedPanelForm.UP_SOUTH_EAST -> Pair(Rotation.R0, Rotation.R0)
         LedPanelForm.UP_SOUTH_WEST -> Pair(Rotation.R0, Rotation.R90)
         LedPanelForm.UP_NORTH_EAST -> Pair(Rotation.R0, Rotation.R270)
@@ -113,11 +117,10 @@ object ModBlockModelProvider {
         return dispatch
     }
 
-
     fun lampBlock(generators: BlockModelGenerators) {
         val block = ModBlocks.LAMP.get()
-        val onModel =  ModelLocationUtils.getModelLocation(block, "_on")
-        val offModel =  ModelLocationUtils.getModelLocation(block, "_off")
+        val onModel = ModelLocationUtils.getModelLocation(block, "_on")
+        val offModel = ModelLocationUtils.getModelLocation(block, "_off")
         generators.blockStateOutput.accept(
             MultiVariantGenerator.multiVariant(
                 block,
@@ -129,8 +132,8 @@ object ModBlockModelProvider {
 
     private fun switchBlock(generators: BlockModelGenerators) {
         val block = ModBlocks.SWITCH.get()
-        val onModel =  ModelLocationUtils.getModelLocation(block, "_on")
-        val offModel =  ModelLocationUtils.getModelLocation(block, "_off")
+        val onModel = ModelLocationUtils.getModelLocation(block, "_on")
+        val offModel = ModelLocationUtils.getModelLocation(block, "_off")
         generators.blockStateOutput.accept(
             MultiVariantGenerator.multiVariant(
                 block,
@@ -149,29 +152,53 @@ object ModBlockModelProvider {
         onMapping.put(TextureSlot.PARTICLE, fillingTexture)
         offMapping.put(ZERO, fillingTexture)
         offMapping.put(TextureSlot.PARTICLE, fillingTexture)
-        val onModel =  LED_PANEL_MODEL_TEMPLATE.createWithSuffix(
-            block, "_on", onMapping, generators.modelOutput
+        val onModel = LED_PANEL_MODEL_TEMPLATE.createWithSuffix(
+            block,
+            "_on",
+            onMapping,
+            generators.modelOutput,
         )
-        val offModel =  LED_PANEL_MODEL_TEMPLATE.createWithSuffix(
-            block, "_off", offMapping, generators.modelOutput
+        val offModel = LED_PANEL_MODEL_TEMPLATE.createWithSuffix(
+            block,
+            "_off",
+            offMapping,
+            generators.modelOutput,
         )
-        val onModelTwoSide =  LED_PANEL_TWO_SIDE_MODEL_TEMPLATE.createWithSuffix(
-            block, "_two_side_on", onMapping, generators.modelOutput
+        val onModelTwoSide = LED_PANEL_TWO_SIDE_MODEL_TEMPLATE.createWithSuffix(
+            block,
+            "_two_side_on",
+            onMapping,
+            generators.modelOutput,
         )
-        val offModelTwoSide =  LED_PANEL_TWO_SIDE_MODEL_TEMPLATE.createWithSuffix(
-            block, "_two_side_off", offMapping, generators.modelOutput
+        val offModelTwoSide = LED_PANEL_TWO_SIDE_MODEL_TEMPLATE.createWithSuffix(
+            block,
+            "_two_side_off",
+            offMapping,
+            generators.modelOutput,
         )
-        val onModelTwoSideSide =  LED_PANEL_TWO_SIDE_SIDE_MODEL_TEMPLATE.createWithSuffix(
-            block, "_two_side_side_on", onMapping, generators.modelOutput
+        val onModelTwoSideSide = LED_PANEL_TWO_SIDE_SIDE_MODEL_TEMPLATE.createWithSuffix(
+            block,
+            "_two_side_side_on",
+            onMapping,
+            generators.modelOutput,
         )
-        val offModelTwoSideSide =  LED_PANEL_TWO_SIDE_SIDE_MODEL_TEMPLATE.createWithSuffix(
-            block, "_two_side_side_off", offMapping, generators.modelOutput
+        val offModelTwoSideSide = LED_PANEL_TWO_SIDE_SIDE_MODEL_TEMPLATE.createWithSuffix(
+            block,
+            "_two_side_side_off",
+            offMapping,
+            generators.modelOutput,
         )
-        val onModelThreeSide =  LED_PANEL_THREE_SIDE_MODEL_TEMPLATE.createWithSuffix(
-            block, "_three_side_on", onMapping, generators.modelOutput
+        val onModelThreeSide = LED_PANEL_THREE_SIDE_MODEL_TEMPLATE.createWithSuffix(
+            block,
+            "_three_side_on",
+            onMapping,
+            generators.modelOutput,
         )
-        val offModelThreeSide =  LED_PANEL_THREE_SIDE_MODEL_TEMPLATE.createWithSuffix(
-            block, "_three_side_off", offMapping, generators.modelOutput
+        val offModelThreeSide = LED_PANEL_THREE_SIDE_MODEL_TEMPLATE.createWithSuffix(
+            block,
+            "_three_side_off",
+            offMapping,
+            generators.modelOutput,
         )
 
         val dispatch = PropertyDispatch.properties(LedPanelBlock.FORM, ColoredLightBlock.ENALBED)
@@ -179,32 +206,80 @@ object ModBlockModelProvider {
             if (it.directions.size == 1) {
                 // Single panel
                 val direction = it.directions[0]
-                dispatch.select(it, false, Variant.variant().with(Y_ROT, toYAnglePedestal(direction)).with(X_ROT, toXAnglePedestal(direction)).with(
-                    MODEL, offModel))
-                dispatch.select(it, true, Variant.variant().with(Y_ROT, toYAnglePedestal(direction)).with(X_ROT, toXAnglePedestal(direction)).with(
-                    MODEL, onModel))
+                dispatch.select(
+                    it,
+                    false,
+                    Variant.variant().with(Y_ROT, toYAnglePedestal(direction)).with(X_ROT, toXAnglePedestal(direction)).with(
+                        MODEL,
+                        offModel,
+                    ),
+                )
+                dispatch.select(
+                    it,
+                    true,
+                    Variant.variant().with(Y_ROT, toYAnglePedestal(direction)).with(X_ROT, toXAnglePedestal(direction)).with(
+                        MODEL,
+                        onModel,
+                    ),
+                )
             } else if (it.directions.size == 2) {
                 if (it.directions[0] == Direction.UP) {
                     dispatch.select(it, false, Variant.variant().with(MODEL, offModelTwoSide).with(Y_ROT, toYAnglePedestal(it.directions[1].opposite)))
                     dispatch.select(it, true, Variant.variant().with(MODEL, onModelTwoSide).with(Y_ROT, toYAnglePedestal(it.directions[1].opposite)))
                 } else if (it.directions[0] == Direction.DOWN) {
-                    dispatch.select(it, false, Variant.variant().with(MODEL, offModelTwoSide).with(Y_ROT, toYAnglePedestal(it.directions[1])).with(
-                        X_ROT, Rotation.R180))
-                    dispatch.select(it, true, Variant.variant().with(MODEL, onModelTwoSide).with(Y_ROT, toYAnglePedestal(it.directions[1])).with(
-                        X_ROT, Rotation.R180))
+                    dispatch.select(
+                        it,
+                        false,
+                        Variant.variant().with(MODEL, offModelTwoSide).with(Y_ROT, toYAnglePedestal(it.directions[1])).with(
+                            X_ROT,
+                            Rotation.R180,
+                        ),
+                    )
+                    dispatch.select(
+                        it,
+                        true,
+                        Variant.variant().with(MODEL, onModelTwoSide).with(Y_ROT, toYAnglePedestal(it.directions[1])).with(
+                            X_ROT,
+                            Rotation.R180,
+                        ),
+                    )
                 } else {
                     val rotation = toTwoFaceLedPanelRotation(it.directions[0], it.directions[1])
-                    dispatch.select(it, false, Variant.variant().with(MODEL, offModelTwoSideSide).with(
-                        X_ROT, rotation.first).with(Y_ROT, rotation.second))
-                    dispatch.select(it, true, Variant.variant().with(MODEL, onModelTwoSideSide).with(
-                        X_ROT, rotation.first).with(Y_ROT, rotation.second))
+                    dispatch.select(
+                        it,
+                        false,
+                        Variant.variant().with(MODEL, offModelTwoSideSide).with(
+                            X_ROT,
+                            rotation.first,
+                        ).with(Y_ROT, rotation.second),
+                    )
+                    dispatch.select(
+                        it,
+                        true,
+                        Variant.variant().with(MODEL, onModelTwoSideSide).with(
+                            X_ROT,
+                            rotation.first,
+                        ).with(Y_ROT, rotation.second),
+                    )
                 }
             } else if (it.directions.size == 3) {
                 val rotation = toThreeFaceRotation(it)
-                dispatch.select(it, false, Variant.variant().with(MODEL, offModelThreeSide).with(
-                    X_ROT, rotation.first).with(Y_ROT, rotation.second))
-                dispatch.select(it, true, Variant.variant().with(MODEL, onModelThreeSide).with(
-                    X_ROT, rotation.first).with(Y_ROT, rotation.second))
+                dispatch.select(
+                    it,
+                    false,
+                    Variant.variant().with(MODEL, offModelThreeSide).with(
+                        X_ROT,
+                        rotation.first,
+                    ).with(Y_ROT, rotation.second),
+                )
+                dispatch.select(
+                    it,
+                    true,
+                    Variant.variant().with(MODEL, onModelThreeSide).with(
+                        X_ROT,
+                        rotation.first,
+                    ).with(Y_ROT, rotation.second),
+                )
             }
         }
         generators.blockStateOutput.accept(

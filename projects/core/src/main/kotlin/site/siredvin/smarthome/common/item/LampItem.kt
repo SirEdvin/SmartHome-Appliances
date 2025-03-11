@@ -8,10 +8,10 @@ import net.minecraft.world.level.block.Block
 import site.siredvin.broccolium.modules.base.item.DescriptiveBlockItem
 import site.siredvin.smarthome.common.block.ColoredLightBlock
 
-class LampItem(block: Block): DescriptiveBlockItem(block, Properties().stacksTo(64)) {
+class LampItem(block: Block) : DescriptiveBlockItem(block, Properties().stacksTo(64)) {
 
     override fun getDescriptionId(stack: ItemStack): String {
         val color = stack.getOrDefault(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY).get(ColoredLightBlock.COLOR) ?: DyeColor.WHITE
-        return "${descriptionId}.${color.getName().lowercase()}"
+        return "$descriptionId.${color.getName().lowercase()}"
     }
 }

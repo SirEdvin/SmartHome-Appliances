@@ -37,8 +37,8 @@ object SmartScrewdriverRenderingLayer {
         LevelRenderer.renderLineBox(
             pose, bufferSource.getBuffer(RenderType.lines()),
             blockPos.x.toDouble() + box.minX, blockPos.y.toDouble() + box.minY, blockPos.z.toDouble() + box.minZ,
-            blockPos.x.toDouble() + min(box.maxX, 1.0),  blockPos.y.toDouble() + min(box.maxY, 1.0), blockPos.z.toDouble() + min(box.maxZ, 1.0),
-            color[0], color[1], color[2], color[3]
+            blockPos.x.toDouble() + min(box.maxX, 1.0), blockPos.y.toDouble() + min(box.maxY, 1.0), blockPos.z.toDouble() + min(box.maxZ, 1.0),
+            color[0], color[1], color[2], color[3],
         )
         if (lineTo != null) {
             val buffer = bufferSource.getBuffer(RenderType.lines())
@@ -51,8 +51,8 @@ object SmartScrewdriverRenderingLayer {
                 .setNormal(pose.last(), 0.0F, 1.0F, 0.0F) // Normal vector
         }
         pose.popPose()
-        RenderSystem.disableBlend();
-        RenderSystem.enableDepthTest();
+        RenderSystem.disableBlend()
+        RenderSystem.enableDepthTest()
     }
 
     fun render(pose: PoseStack, bufferSource: MultiBufferSource, level: ClientLevel, camera: Camera) {

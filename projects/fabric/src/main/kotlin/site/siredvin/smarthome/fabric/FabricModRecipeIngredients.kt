@@ -6,7 +6,5 @@ import net.minecraft.world.item.crafting.Ingredient
 import site.siredvin.smarthome.xplat.ModRecipeIngredients
 
 object FabricModRecipeIngredients : ModRecipeIngredients {
-    override fun itemStackIngredient(itemStack: ItemStack): Ingredient {
-        return ComponentsIngredient(Ingredient.of(itemStack), itemStack.componentsPatch).toVanilla()
-    }
+    override fun itemStackIngredient(itemStack: ItemStack): Ingredient = ComponentsIngredient(Ingredient.of(itemStack), itemStack.componentsPatch).toVanilla()
 }

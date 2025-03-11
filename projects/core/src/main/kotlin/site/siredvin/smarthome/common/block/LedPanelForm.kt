@@ -30,7 +30,7 @@ enum class LedPanelForm(vararg directions: Direction) : StringRepresentable {
     DOWN_NORTH_EAST(Direction.DOWN, Direction.NORTH, Direction.EAST),
     DOWN_NORTH_WEST(Direction.DOWN, Direction.NORTH, Direction.WEST),
     DOWN_SOUTH_EAST(Direction.DOWN, Direction.SOUTH, Direction.EAST),
-    DOWN_SOUTH_WEST(Direction.DOWN, Direction.SOUTH, Direction.WEST),;
+    DOWN_SOUTH_WEST(Direction.DOWN, Direction.SOUTH, Direction.WEST), ;
 
     val shape: VoxelShape = LedPanelHelper.combinedShapes(*directions)
     val directions: List<Direction> = directions.sorted()
@@ -42,7 +42,5 @@ enum class LedPanelForm(vararg directions: Direction) : StringRepresentable {
         }
     }
 
-    override fun getSerializedName(): String {
-        return name.lowercase()
-    }
+    override fun getSerializedName(): String = name.lowercase()
 }

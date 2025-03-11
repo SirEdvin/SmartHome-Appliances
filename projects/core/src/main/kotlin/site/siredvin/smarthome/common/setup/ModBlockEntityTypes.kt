@@ -8,11 +8,10 @@ object ModBlockEntityTypes {
     val SWITCH = ModPlatform.registerBlockEntity("switch") {
         PlatformToolkit.get().createBlockEntityType(
             ::SwitchBlockEntity,
-            ModBlocks.SWITCH.get()
+            ModBlocks.SWITCH.get(),
         )
     }
 
     fun doSomething() {
-
     }
 }
