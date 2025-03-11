@@ -18,12 +18,12 @@ subprojects {
     setupSubproject(this)
 }
 //
-//githubShaking {
-//    modBranch.set("1.20")
-//    projectRepo.set("Template")
-////    mastodonProjectName.set("Template")
-//    shake()
-//}
+githubShaking {
+    modBranch.set("1.21")
+    projectRepo.set("SmartHome-Appliances")
+//    mastodonProjectName.set("Template")
+    shake()
+}
 
 repositories {
     mavenCentral()
