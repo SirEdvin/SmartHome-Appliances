@@ -53,6 +53,6 @@
   "block.smarthome_appliances.switch": "Перемикач",
   "item.smarthome_appliances.smart_screwdriver": "Розумна викрутна",
   "item.smarthome_appliances.smart_screwdriver.tooltip": "§6Іноді вона видає доволі високий звук",
-  "text.smarthome_appliances.creative_tab": "А це треба перейменувати, друже",
+  "text.smarthome_appliances.creative_tab": "SmartHome Appliances",
   "text.smarthome_appliances.screwdriver_target_block": "Цільовий блок %s"
 }

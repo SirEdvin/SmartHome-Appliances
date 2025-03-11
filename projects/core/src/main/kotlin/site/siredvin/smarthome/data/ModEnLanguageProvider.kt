@@ -29,7 +29,7 @@ class ModEnLanguageProvider(
             add(ModBlocks.LED_PANEL.get().createColoredItemStack(it).descriptionId, "${it.name.lowercase().replaceFirstChar { chr -> chr.titlecaseChar() } } led panel")
             add(ModBlocks.SMOOTH_LED_PANEL.get().createColoredItemStack(it).descriptionId, "${it.name.lowercase().replaceFirstChar { chr -> chr.titlecaseChar() } } smooth led panel")
         }
-        add(ModText.CREATIVE_TAB, "Rename this, pal")
+        add(ModText.CREATIVE_TAB, "SmartHome Appliances")
         add(ModText.SCREWDRIVER_TARGET_BLOCK, "Target block %s")
         hooks.forEach { it.accept(this) }
     }

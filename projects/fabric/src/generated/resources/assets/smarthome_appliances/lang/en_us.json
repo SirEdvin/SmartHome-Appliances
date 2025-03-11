@@ -53,6 +53,6 @@
   "block.smarthome_appliances.switch": "Switch",
   "item.smarthome_appliances.smart_screwdriver": "Smart screwdriver",
   "item.smarthome_appliances.smart_screwdriver.tooltip": "§6Sometimes you can hear it makes a pretty pitch sound",
-  "text.smarthome_appliances.creative_tab": "Rename this, pal",
+  "text.smarthome_appliances.creative_tab": "SmartHome Appliances",
   "text.smarthome_appliances.screwdriver_target_block": "Target block %s"
 }

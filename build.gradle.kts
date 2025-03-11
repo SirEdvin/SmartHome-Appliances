@@ -21,6 +21,7 @@ subprojects {
 githubShaking {
     modBranch.set("1.21")
     projectRepo.set("SmartHome-Appliances")
+    useForge.set(false)
 //    mastodonProjectName.set("Template")
     shake()
 }

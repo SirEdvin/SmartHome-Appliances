@@ -48,7 +48,7 @@ class ModUaLanguageProvider(
             add(ModBlocks.LED_PANEL.get().createColoredItemStack(it).descriptionId, "${COLOR_MAP[it]} led-панель")
             add(ModBlocks.SMOOTH_LED_PANEL.get().createColoredItemStack(it).descriptionId, "${COLOR_MAP[it]} гладка led-панель")
         }
-        add(ModText.CREATIVE_TAB, "А це треба перейменувати, друже")
+        add(ModText.CREATIVE_TAB, "SmartHome Appliances")
         add(ModText.SCREWDRIVER_TARGET_BLOCK, "Цільовий блок %s")
         hooks.forEach { it.accept(this) }
     }
