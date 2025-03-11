@@ -107,6 +107,7 @@ class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState) : MutableNBT
                 targetValue,
             ),
         )
+        val toRemoveList = mutableSetOf<BlockPos>()
         internalConnectedBlocks.forEach {
             val targetState = level.getBlockState(it)
             if (targetState.`is`(ModBlockTags.LIGHT_BLOCK)) {
@@ -117,7 +118,12 @@ class SwitchBlockEntity(blockPos: BlockPos, blockState: BlockState) : MutableNBT
                         targetValue,
                     ),
                 )
+            } else {
+                toRemoveList.add(it)
             }
+        }
+        toRemoveList.forEach {
+            internalConnectedBlocks.remove(it)
         }
         if (player != null) {
             level.playSound(

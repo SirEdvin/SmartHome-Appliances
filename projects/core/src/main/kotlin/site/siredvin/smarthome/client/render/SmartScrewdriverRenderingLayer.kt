@@ -26,13 +26,14 @@ object SmartScrewdriverRenderingLayer {
     private val GREEN_COLOR = floatArrayOf(0.5F, 1.0F, 0.5F, 1.0F)
 
     private fun renderTargetBlockBox(pose: PoseStack, bufferSource: MultiBufferSource, level: ClientLevel, blockPos: BlockPos, camera: Camera, color: FloatArray = RED_COLOR, lineTo: Vec3? = null) {
+        val blockState = level.getBlockState(blockPos)
+        val shape = blockState.getShape(level, blockPos)
+        if (shape.isEmpty) return
         RenderSystem.enableBlend()
         RenderSystem.disableDepthTest()
         RenderSystem.lineWidth(2.0f)
         pose.pushPose()
         pose.translate(-camera.position.x, -camera.position.y, -camera.position.z)
-        val blockState = level.getBlockState(blockPos)
-        val shape = blockState.getShape(level, blockPos)
         val box = shape.bounds().inflate(0.05)
         LevelRenderer.renderLineBox(
             pose, bufferSource.getBuffer(RenderType.lines()),
