@@ -6,7 +6,6 @@ import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import site.siredvin.broccolium.modules.platform.api.InnerBasePlatform
 import site.siredvin.smarthome.common.setup.ModBlocks
-import site.siredvin.smarthome.common.setup.ModItems
 import site.siredvin.smarthome.data.ModText
 import site.siredvin.smarthome.xplat.ModPlatform
 import site.siredvin.smarthome.xplat.ModRecipeIngredients

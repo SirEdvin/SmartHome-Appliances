@@ -64,19 +64,15 @@ dependencies {
     }
 }
 
-// modPublishing {
-//    output.set(tasks.remapJar)
-//    requiredDependencies.set(
-//        listOf(
-//            "cc-tweaked",
-//            "fabric-language-kotlin",
-//            "peripheralium",
-//        ),
-//    )
-//    requiredDependenciesCurseforge.add("forge-config-api-port-fabric")
-//    requiredDependenciesModrinth.add("forge-config-api-port")
-//    shake()
-// }
+modPublishing {
+    output.set(tasks.remapJar)
+    requiredDependencies.set(
+        listOf(
+            "fabric-language-kotlin",
+        ),
+    )
+    shake()
+}
 
 publishingShaking {
     shake()
