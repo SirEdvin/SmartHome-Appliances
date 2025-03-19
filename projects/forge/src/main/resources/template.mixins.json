@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "site.siredvin.template.mixins",
+  "package": "site.siredvin.smarthome.mixins",
   "compatibilityLevel": "JAVA_17",
   "injectors": {
     "defaultRequire": 1

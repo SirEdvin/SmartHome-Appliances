@@ -10,12 +10,13 @@ val modBaseName: String by extra
 
 baseShaking {
     projectPart.set("common")
+    integrationRepositories.set(true)
     shake()
 }
 
 vanillaShaking {
-    accessWideners.add("src/main/resources/template-common.accesswidener")
-    accessWideners.add("src/main/resources/template.accesswidener")
+    accessWideners.add("src/main/resources/smarthome_appliances-common.accesswidener")
+    accessWideners.add("src/main/resources/smarthome_appliances.accesswidener")
     shake()
 }
 

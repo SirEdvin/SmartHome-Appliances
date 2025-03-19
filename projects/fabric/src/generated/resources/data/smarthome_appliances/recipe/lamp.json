@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "minecraft:glass_pane"
+    },
+    "S": {
+      "item": "minecraft:smooth_stone"
+    },
+    "T": {
+      "item": "minecraft:torch"
+    }
+  },
+  "pattern": [
+    " P ",
+    "PTP",
+    " S "
+  ],
+  "result": {
+    "components": {
+      "minecraft:block_state": {
+        "color": "white"
+      }
+    },
+    "count": 4,
+    "id": "smarthome_appliances:lamp"
+  },
+  "show_notification": false
+}

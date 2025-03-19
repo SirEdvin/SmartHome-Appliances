@@ -1,4 +1,4 @@
-package site.siredvin.template;
+package site.siredvin.smarthome;
 
 public class EmptyJava {
 }

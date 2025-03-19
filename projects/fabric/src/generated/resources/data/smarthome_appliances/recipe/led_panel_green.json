@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "smarthome_appliances:led_panel"
+    },
+    {
+      "item": "minecraft:green_dye"
+    }
+  ],
+  "result": {
+    "components": {
+      "minecraft:block_state": {
+        "color": "green"
+      }
+    },
+    "count": 1,
+    "id": "smarthome_appliances:led_panel"
+  }
+}

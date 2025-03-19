@@ -1,0 +1,7 @@
+{
+  "values": [
+    "smarthome_appliances:lamp",
+    "smarthome_appliances:led_panel",
+    "smarthome_appliances:smooth_led_panel"
+  ]
+}

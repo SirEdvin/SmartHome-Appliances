@@ -1,0 +1,7 @@
+{
+  "parent": "smarthome_appliances:block/switch",
+  "textures": {
+    "base": "smarthome_appliances:block/switch_face_on",
+    "particle": "smarthome_appliances:block/switch_face_on"
+  }
+}

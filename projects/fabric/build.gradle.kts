@@ -19,7 +19,11 @@ baseShaking {
 
 fabricShaking {
     commonProjectName.set("core")
+<<<<<<< HEAD
     accessWidener.set(project(":core").file("src/main/resources/template.accesswidener"))
+=======
+    accessWidener.set(project(":core").file("src/main/resources/smarthome_appliances.accesswidener"))
+>>>>>>> 1.21
     extraVersionMappings.set(
         mapOf(
             "forgeconfigapiport" to "forgeconfigapirt",
@@ -54,28 +58,27 @@ dependencies {
     modImplementation(libs.bundles.fabric.base) {
         isTransitive = false
     }
+    modImplementation(libs.bundles.fabric.include) {
+        isTransitive = false
+    }
+    include(libs.bundles.fabric.include)
 
     modRuntimeOnly(libs.bundles.externalMods.fabric.runtime) {
         isTransitive = false
     }
 }
 
-// modPublishing {
-//    output.set(tasks.remapJar)
-//    requiredDependencies.set(
-//        listOf(
-//            "cc-tweaked",
-//            "fabric-language-kotlin",
-//            "peripheralium",
-//        ),
-//    )
-//    requiredDependenciesCurseforge.add("forge-config-api-port-fabric")
-//    requiredDependenciesModrinth.add("forge-config-api-port")
-//    shake()
-// }
+modPublishing {
+    output.set(tasks.remapJar)
+    requiredDependencies.set(
+        listOf(
+            "fabric-language-kotlin",
+        ),
+    )
+    shake()
+}
 
 publishingShaking {
-    shake()
     project.publishing {
         publications {
             named<MavenPublication>("maven") {

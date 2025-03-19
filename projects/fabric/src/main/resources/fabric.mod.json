@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "id": "template",
+  "id": "smarthome_appliances",
   "version": "${version}",
-  "name": "Template",
-  "description": "Mod Description",
+  "name": "SmartHome Appliances",
+  "description": "A lot of lights, switches and toggles connected wirelessly, to make your home truly smart",
   "authors": [
     "SirEdvin"
   ],
-  "accessWidener": "template.accesswidener",
+  "accessWidener": "smarthome_appliances.accesswidener",
   "contact": {
     "homepage": "https://example.com/",
     "issues": "https://example.com/",
@@ -20,19 +20,19 @@
     "main": [
       {
         "adapter": "kotlin",
-        "value": "site.siredvin.template.FabricMod"
+        "value": "site.siredvin.smarthome.FabricMod"
       }
     ],
     "client": [
       {
         "adapter": "kotlin",
-        "value": "site.siredvin.template.FabricModClient"
+        "value": "site.siredvin.smarthome.FabricModClient"
       }
     ],
     "fabric-datagen": [
       {
         "adapter": "kotlin",
-        "value": "site.siredvin.template.data.FabricDataGenerators"
+        "value": "site.siredvin.smarthome.data.FabricDataGenerators"
       }
     ]
   },

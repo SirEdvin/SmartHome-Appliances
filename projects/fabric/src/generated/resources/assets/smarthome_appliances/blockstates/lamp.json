@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "enabled=false,facing=down": {
+      "model": "smarthome_appliances:block/lamp_off",
+      "x": 180,
+      "y": 0
+    },
+    "enabled=false,facing=east": {
+      "model": "smarthome_appliances:block/lamp_off",
+      "x": 90,
+      "y": 90
+    },
+    "enabled=false,facing=north": {
+      "model": "smarthome_appliances:block/lamp_off",
+      "x": 90,
+      "y": 0
+    },
+    "enabled=false,facing=south": {
+      "model": "smarthome_appliances:block/lamp_off",
+      "x": 90,
+      "y": 180
+    },
+    "enabled=false,facing=up": {
+      "model": "smarthome_appliances:block/lamp_off",
+      "x": 0,
+      "y": 0
+    },
+    "enabled=false,facing=west": {
+      "model": "smarthome_appliances:block/lamp_off",
+      "x": 90,
+      "y": 270
+    },
+    "enabled=true,facing=down": {
+      "model": "smarthome_appliances:block/lamp_on",
+      "x": 180,
+      "y": 0
+    },
+    "enabled=true,facing=east": {
+      "model": "smarthome_appliances:block/lamp_on",
+      "x": 90,
+      "y": 90
+    },
+    "enabled=true,facing=north": {
+      "model": "smarthome_appliances:block/lamp_on",
+      "x": 90,
+      "y": 0
+    },
+    "enabled=true,facing=south": {
+      "model": "smarthome_appliances:block/lamp_on",
+      "x": 90,
+      "y": 180
+    },
+    "enabled=true,facing=up": {
+      "model": "smarthome_appliances:block/lamp_on",
+      "x": 0,
+      "y": 0
+    },
+    "enabled=true,facing=west": {
+      "model": "smarthome_appliances:block/lamp_on",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

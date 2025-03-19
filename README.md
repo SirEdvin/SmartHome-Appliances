@@ -1,1 +1,1 @@
-# TemplateProject
+# SmartHome Appliances

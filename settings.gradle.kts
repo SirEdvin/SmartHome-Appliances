@@ -29,7 +29,7 @@ pluginManagement {
 }
 
 val minecraftVersion: String by settings
-rootProject.name = "TemplateProject $minecraftVersion"
+rootProject.name = "SmartHomeAppliances $minecraftVersion"
 
 include(":core")
 include(":forge")

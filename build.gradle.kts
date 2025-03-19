@@ -9,6 +9,7 @@ plugins {
 
 subprojectShaking {
     withKotlin.set(true)
+
 }
 
 val setupSubproject = subprojectShaking::setupSubproject
@@ -16,10 +17,11 @@ val setupSubproject = subprojectShaking::setupSubproject
 subprojects {
     setupSubproject(this)
 }
-
+//
 githubShaking {
     modBranch.set("1.20")
-    projectRepo.set("Template")
+    projectRepo.set("SmartHome-Appliances")
+    useForgeJarJar.set(true)
 //    mastodonProjectName.set("Template")
     shake()
 }
